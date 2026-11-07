@@ -4,9 +4,12 @@ title: test
 description: dsdg
 created: 2026-11-03
 modified: 2026-11-07T17:11:46.538Z
+published: 2026-11-03
 tags:
   - test
   - test2
+date: 2026-11-03
+lab: lab01
 ---
 
 ## 목차
