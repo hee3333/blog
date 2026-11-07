@@ -65,13 +65,18 @@ article li a.internal:not(.tag-link) {
 
 article li a.internal:not(.tag-link):hover {
   color: #0f3929;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /*사이드바 설정*/
 
-:root[saved-theme="light"] .sidebar.left,
-:root[saved-theme="light"] .sidebar.right {
+:root[saved-theme="light"] .sidebar.left {
   background-color: #8f9d8a;
+}
+
+:root[saved-theme="light"] .sidebar.right {
+  background-color: #ffffff;
 }
 
 :root[saved-theme="light"] .graph > .graph-outer {
@@ -164,7 +169,7 @@ article li a.internal:not(.tag-link):hover {
 
 /* 경로와 페이지 제목 사이 간격 */
 .breadcrumb-container {
-  margin-bottom: 1rem;
+  margin-bottom: 3.3rem;
 }
 
 /* 목록에서 날짜와 포스팅 제목 사이 간격 */
@@ -181,7 +186,13 @@ article li a.internal:not(.tag-link):hover {
 
 /* 목차 링크 */
 :root[saved-theme="light"] .toc a {
-  color: #184e3e;
+  color: #9298a1;
+}
+
+:root[saved-theme="light"] .toc a:hover,
+:root[saved-theme="light"] .toc a.in-view {
+  color: #248c65 !important;
+  font-weight: 600;
 }
 
 article h2 {
@@ -213,6 +224,10 @@ article h3 {
   color: #248c65;
 }
 
+:root[saved-theme="light"] .sidebar.left .explorer-content ul li > a.active {
+  font-weight: 700;
+}
+
 /*목록 태그 없애기*/
 .section > ul.tags {
   display: none !important;
@@ -231,4 +246,172 @@ article h3 {
 /*코드 글자색*/
 :root[saved-theme="light"] article p code {
   color: #248c65;
+}
+
+:root[saved-theme="light"] .toc button.toc-header > h3 {
+  font-size: 1.2rem;
+  color: #a6a6a6;
+}
+
+/*최근 업데이트*/
+
+:root[saved-theme="light"] .recent-notes > h3 {
+  margin: 0 0 0.65rem;
+  color: #666666;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+:root[saved-theme="light"] .recent-notes .recent-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 최근 업데이트: 날짜 숨기기 */
+.recent-notes .meta {
+  display: none;
+}
+
+/* 최근 업데이트: 링크 모양 */
+:root[saved-theme="light"] .recent-notes .recent-li a.internal {
+  color: #9298a1;
+  font-size: 1rem;
+  text-decoration: none;
+  background: transparent;
+  transition: color 0.15s ease;
+}
+
+:root[saved-theme="light"] .recent-notes .recent-li a.internal:hover {
+  color: #248c65;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:root[saved-theme="light"] .recent-notes .recent-li .section > .desc > h3 {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  font-weight: 400 !important;
+  line-height: 1.35;
+}
+
+:root[saved-theme="light"] .recent-notes .recent-li .section > .desc > h3 > a.internal {
+  font-weight: 400 !important;
+}
+
+:root[saved-theme="light"] .recent-notes .recent-li {
+  margin: 0 0 0.25rem !important;
+  padding: 0;
+}
+
+/* 탐색기에서 개별 글과 폴더 안 목록 숨기기 */
+.sidebar.left .explorer-content a.nav-file-title {
+  display: none !important;
+}
+
+.sidebar.left .explorer-content .folder-outer {
+  display: none !important;
+}
+
+/* 폴더 옆 펼침 화살표 숨기기 */
+.sidebar.left .explorer-content .folder-icon {
+  display: none !important;
+}
+
+/* 왼쪽 탐색기 제목을 고정하고 토글 화살표 숨기기 */
+.sidebar.left .explorer > .title-button.explorer-toggle {
+  pointer-events: none;
+  cursor: default;
+}
+
+.sidebar.left .explorer > .title-button.explorer-toggle .fold {
+  display: none;
+}
+
+:root[saved-theme="light"] .section-li .section > .desc > h3 > a.internal:hover {
+  color: #248c65 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/*왼사이드바 링크 색 바뀌는 시간*/
+:root[saved-theme="light"] .sidebar.left .explorer-content a:hover {
+  color: #248c65 !important;
+  background-color: transparent !important;
+}
+
+
+:root[saved-theme="light"] .sidebar.left .explorer-content a {
+  transition: color 0.30s ease;
+}
+
+
+:root[saved-theme="light"] .sidebar.left .explorer-content a,
+:root[saved-theme="light"] .sidebar.left .page-title a {
+  transition: color 0.25s ease;
+}
+
+:root[saved-theme="light"] .sidebar.left .explorer-content a:hover,
+:root[saved-theme="light"] .sidebar.left .page-title a:hover {
+  color: #248c65 !important;
+  background-color: transparent !important;
+}
+
+/*사이드바 타이틀 간격*/
+.sidebar.left .page-title {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/*왼사이드바와 본문 간격*/
+@media (min-width: 800px) {
+  .page > #quartz-body {
+    column-gap: 2rem !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .page > #quartz-body .sidebar.left {
+    padding-left: 3rem !important;
+  }
+}
+
+/*토글 없애기*/
+.toc > .toc-header {
+  pointer-events: none;
+  cursor: default;
+  display: none !important;
+}
+
+.toc > .toc-header .fold {
+  display: none !important;
+}
+
+/*속성과 제목 간격*/
+.note-properties {
+  margin: 3rem 0 1.25rem;
+}
+
+/*최근 올라온 글에서 404페이지 제거*/
+.recent-notes .recent-li:has(a[href*="404"]) {
+  display: none;
+}
+
+:root[saved-theme="light"] .center,
+:root[saved-theme="light"] .sidebar.right,
+:root[saved-theme="light"] .page-header,
+:root[saved-theme="light"] .page-footer,
+:root[saved-theme="light"] #quartz-body {
+  background-color: #f9f9f9;
+}
+
+:root[saved-theme="light"] .sidebar.left {
+  background:
+    linear-gradient(rgba(143, 157, 138, 0.35), rgba(143, 157, 138, 0.35)),
+    url("https://hee3333.github.io/blog/static/side01.jpg") center / cover no-repeat;
+}
+
+:root[saved-theme="light"] .sidebar.left .explorer-content {
+  background-color: transparent;
 }
