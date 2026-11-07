@@ -1,5 +1,6 @@
 ---
 publish: true
+title: 블로그
 created: 2026-11-07T06:36:14.869Z
 modified: 2026-11-07T06:36:29.278Z
 ---
@@ -9,3 +10,7 @@ modified: 2026-11-07T06:36:29.278Z
        alt="GitHub Contributions"
        style="display:block;width:100%;height:100%;object-fit:contain;">
 </div>
+
+- [[hack|Hack — Windows]]
+- [[Jerry|Jerry — Windows]]
+- [[Legacy|Legacy — Windows]]
