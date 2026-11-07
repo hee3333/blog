@@ -2,8 +2,8 @@
 publish: true
 title: test
 description: dsdg
-created: 2026-11-07
-modified: 2026-11-07T16:57:20.313Z
+created: 2026-11-03
+modified: 2026-11-07T17:11:46.538Z
 tags:
   - test
   - test2
@@ -20,7 +20,7 @@ tags:
 
 ## 1. 개요
 
-본 보고서는 2026년 11월 7일에 진행된 lab01에 대한 모의 해킹 보고서이다.
+본 보고서는 2026년 11월 3일에 진행된 lab01에 대한 모의 해킹 보고서이다.
 
 ## 2. 총평
 
