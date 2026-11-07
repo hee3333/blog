@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: 블로그
+  pageTitle: HOME
   pageTitleSuffix: ""
   enableSPA: true
-  enablePopovers: true
+  enablePopovers: false
   analytics: null
   locale: ko-KR
   baseUrl: hee3333.github.io/blog
@@ -170,8 +170,8 @@ plugins:
   - source: "@quartz-community/search"
     enabled: true
     layout:
-      position: left
-      priority: 20
+      position: right
+      priority: 0
       group: toolbar
       groupOptions:
         grow: true
@@ -211,7 +211,7 @@ plugins:
     enabled: true
     layout:
       position: left
-      priority: 35
+      priority: 5
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
     enabled: true
@@ -237,7 +237,16 @@ plugins:
       position: footer
       priority: 50
   - source: "@quartz-community/recent-notes"
-    enabled: false
+    enabled: true
+    options:
+        title: "최근 올라온 글"
+        limit: 5
+        showTags: false
+        hideTagPages: true
+        hideFolderPages: true
+    layout:
+       position: right
+       priority: 40
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}
