@@ -1,12 +1,11 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: 블로그
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
-  analytics:
-    provider: plausible
-  locale: en-US
+  analytics: null
+  locale: ko-KR
   baseUrl: hee3333.github.io/blog
   ignorePatterns:
     - private
@@ -82,7 +81,7 @@ plugins:
     order: 50
     layout:
       position: right
-      priority: 30
+      priority: 5
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
@@ -141,6 +140,7 @@ plugins:
     options:
       enableSiteMap: true
       enableRSS: true
+      rssSlug: feed
   - source: "@quartz-community/favicon"
     enabled: true
   - source: "@quartz-community/og-image"
@@ -160,8 +160,10 @@ plugins:
     layout:
       position: left
       priority: 50
+    options:
+        title: "목록"
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
@@ -184,10 +186,11 @@ plugins:
       position: beforeBody
       priority: 10
   - source: "@quartz-community/content-meta"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: "@quartz-community/tag-list"
     enabled: false
     layout:
@@ -225,7 +228,7 @@ plugins:
       position: afterBody
       priority: 10
   - source: "@quartz-community/footer"
-    enabled: true
+    enabled: false
     options:
       links:
         GitHub: https://github.com/jackyzha0/quartz
@@ -252,9 +255,10 @@ plugins:
     options:
       includeAll: false
       includedProperties:
-        - description
+        - title
+        - date
         - tags
-        - aliases
+        - description
       excludedProperties: []
       hidePropertiesView: false
       delimiters: ---
@@ -264,6 +268,7 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
+      condition: not-index
   - source: "@quartz-community/obsidian-plugin-excalidraw"
     enabled: true
     options:
@@ -275,28 +280,4 @@ plugins:
     enabled: true
     options: {}
     order: 50
-layout:
-  groups:
-    toolbar:
-      priority: 35
-      direction: row
-      gap: 0.5rem
-  byPageType:
-    "404":
-      positions:
-        beforeBody: []
-        left: []
-        right: []
-    content: {}
-    folder:
-      exclude:
-        - reader-mode
-      positions:
-        right: []
-    tag:
-      exclude:
-        - reader-mode
-      positions:
-        right: []
-    canvas: {}
-    bases: {}
+ 

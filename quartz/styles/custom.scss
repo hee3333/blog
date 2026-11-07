@@ -1,3 +1,234 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+/*속성 설정*/
+
+.note-properties {
+  border: 0;
+  border-radius: 0;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.note-properties-header {
+  padding: 0 0 0.4rem;
+  border: 0 !important;
+}
+
+.note-properties-count {
+  display: none;
+}
+
+.note-properties-table,
+.note-properties tbody {
+  display: block;
+  width: 100%;
+}
+
+.note-properties-row {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  border: 0 !important;
+  border-radius: 6px;
+}
+
+.note-properties-row:hover {
+  background: var(--light);
+}
+
+.note-properties-key,
+.note-properties-value {
+  display: block;
+  width: auto;
+  padding: 0.4rem 0.5rem;
+  border: 0 !important;
+  vertical-align: middle;
+}
+
+.note-properties-key {
+  color: var(--gray);
+}
+
+@media (max-width: 600px) {
+  .note-properties-row {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+}
+
+/* 링크 강조 색 */
+article li a.internal:not(.tag-link) {
+  background-color: transparent;
+  padding: 0;
+  color: #248c65;
+}
+
+article li a.internal:not(.tag-link):hover {
+  color: #0f3929;
+}
+
+/*사이드바 설정*/
+
+:root[saved-theme="light"] .sidebar.left,
+:root[saved-theme="light"] .sidebar.right {
+  background-color: #8f9d8a;
+}
+
+:root[saved-theme="light"] .graph > .graph-outer {
+  background-color: #f9fbfa;
+  border-color: #ddd3f0;
+}
+
+:root[saved-theme="light"] .toc a {
+  color: #5b4b8a;
+}
+
+:root[saved-theme="light"] .toc a:hover {
+  color: #8a62d6;
+}
+
+:root[saved-theme="light"] .sidebar.left .explorer-content {
+  background-color: #8f9d8a;
+}
+
+:root[saved-theme="light"] .sidebar.left .explorer-content ul li > a {
+  color: #625b70;
+  background-color: transparent;
+}
+
+:root[saved-theme="light"] .sidebar.left .explorer-content ul li > a.active {
+  color: #248c65;
+  background-color: #f9fbfa;
+  padding: 0.25rem 0.5rem;
+  box-sizing: border-box;
+}
+
+:root[saved-theme="light"] .sidebar.left .folder-container div > button span,
+:root[saved-theme="light"] .sidebar.left .folder-container div > a,
+:root[saved-theme="light"] .sidebar.left .folder-icon {
+  color: #6d5a91;
+}
+
+
+
+/*목차 칸 높이 조절*/
+
+.sidebar.right .toc {
+  min-height: 3rem;
+}
+
+.sidebar.right .toc:has(button.toc-header.collapsed) {
+  flex: 0 0 3rem;
+}
+
+/*글 목록 높이 조절*/
+@media (min-width: 801px) {
+  .sidebar.left .explorer.collapsed {
+    flex: 0 0 2rem !important;
+    min-height: 2rem;
+  }
+}
+
+
+
+/*태그 글자 설정*/
+:root[saved-theme="light"] .note-properties .note-properties-value a.internal.tag-link {
+  color: #248c65;
+  background-color: #ecf0f1;
+}
+
+:root[saved-theme="light"] .note-properties .note-properties-value a.internal.tag-link::before {
+  color: #248c65;
+}
+
+:root[saved-theme="light"] .note-properties .note-properties-value a.internal.tag-link:hover {
+  color: #248c65;
+  background-color: #ecf0f1;
+}
+
+
+/*페이지 리스트 설정*/
+
+.page-listing .section > .meta {
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.page-listing .section {
+  align-items: center;
+}
+
+.page-listing .section > .meta {
+  margin: 0;
+}
+
+/* 경로와 페이지 제목 사이 간격 */
+.breadcrumb-container {
+  margin-bottom: 1rem;
+}
+
+/* 목록에서 날짜와 포스팅 제목 사이 간격 */
+.page-listing .section {
+  column-gap: 1rem;
+}
+
+/* 탐색기 글씨 */
+:root[saved-theme="light"] .sidebar.left .explorer-content ul li > a,
+:root[saved-theme="light"] .sidebar.left .folder-container div > a,
+:root[saved-theme="light"] .sidebar.left .folder-container div > button span {
+  color: #161d1f;
+}
+
+/* 목차 링크 */
+:root[saved-theme="light"] .toc a {
+  color: #184e3e;
+}
+
+article h2 {
+  font-size: 1.25rem;
+  margin-top: 5rem;
+}
+
+article h3 {
+  font-size: 1.1rem;
+}
+
+/*빵부스러기 설정*/
+
+:root[saved-theme="light"] .breadcrumb-container a {
+  color: #248c65;
+}
+
+:root[saved-theme="light"] .breadcrumb-container a:hover {
+  color: #176344;
+}
+
+/* 목록 태그 색상*/
+:root[saved-theme="light"] .section > .tags a.internal.tag-link {
+  color: #248c65;
+  background-color: #ecf0f1;
+}
+
+:root[saved-theme="light"] .section > .tags a.internal.tag-link::before {
+  color: #248c65;
+}
+
+/*목록 태그 없애기*/
+.section > ul.tags {
+  display: none !important;
+}
+
+/*목차 링크 글자색*/
+:root[saved-theme="light"] article :is(h1, h2, h3, h4, h5, h6)[id] > a[href^="#"] {
+  color: #248c65 !important;
+  background: transparent !important;
+}
+
+:root[saved-theme="light"] article :is(h1, h2, h3, h4, h5, h6)[id] > a[href^="#"] svg {
+  stroke: currentColor;
+}
+
+/*코드 글자색*/
+:root[saved-theme="light"] article p code {
+  color: #248c65;
+}
