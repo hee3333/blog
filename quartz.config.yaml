@@ -117,8 +117,6 @@ plugins:
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
-  - source: "@quartz-community/explicit-publish"
-    enabled: false
   - source: "@quartz-community/unlisted-pages"
     enabled: true
     options: {}
