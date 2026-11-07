@@ -2,6 +2,7 @@
 publish: true
 title: test
 description: dsdg
+date: 2026-11-03
 created: 2026-11-03
 modified: 2026-11-07T17:11:46.538Z
 tags:
