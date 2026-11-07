@@ -398,6 +398,7 @@ article h3 {
   display: none;
 }
 
+/*본문 배경 통일*/
 :root[saved-theme="light"] .center,
 :root[saved-theme="light"] .sidebar.right,
 :root[saved-theme="light"] .page-header,
@@ -406,6 +407,7 @@ article h3 {
   background-color: #f9f9f9;
 }
 
+/*배경 넣기*/
 :root[saved-theme="light"] .sidebar.left {
   background:
     linear-gradient(rgba(143, 157, 138, 0.35), rgba(143, 157, 138, 0.35)),
@@ -414,4 +416,31 @@ article h3 {
 
 :root[saved-theme="light"] .sidebar.left .explorer-content {
   background-color: transparent;
+}
+
+/*사이드바 그라데이션*/
+:root[saved-theme="light"] .sidebar.left {
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(100% - 5px),
+      #f9f9f9 100%
+    ),
+    linear-gradient(rgba(143, 157, 138, 0.35), rgba(143, 157, 138, 0.35)),
+    url("https://hee3333.github.io/blog/static/side01.jpg");
+
+  background-size: 100% 100%, cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 801px) {
+  #quartz-body {
+    column-gap: 0;
+  }
+
+  :root[saved-theme="light"] .sidebar.left {
+    border-right: none !important;
+    box-shadow: none !important;
+  }
 }
