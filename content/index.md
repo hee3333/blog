@@ -20,6 +20,8 @@ published: 2026-11-07T19:42:41.956Z
 
 모의해킹과 보안 실습에서 배운 내용을 정리합니다.
 
+## 프로젝트
+
 ## CTF 참가 내역
 
 ![[00. Setting/00. 첨부파일/deadface-ctf-2026-competitor.png|184]] ![[00. Setting/00. 첨부파일/Pasted image 20261109012133.png|268]]
@@ -29,3 +31,9 @@ DEADFACE CTF 2026 - 61st
 ![[00. Setting/00. 첨부파일/Pasted image 20261109013853.png|457]]
 
 DIVER OSINT CTF 2026 - 82nd
+
+## 보유 자격증
+
+26.9.22 네트워크 관리사 2급
+
+26.10.31 리눅스 마스터 2급 1차 합격 (12/2 2차 시험 예정)
