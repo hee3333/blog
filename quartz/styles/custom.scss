@@ -536,3 +536,20 @@ article h3 {
   max-height: none;
   overflow: visible;
 }
+
+:root[saved-theme="light"] .tag-cloud > h3 {
+  color: #666666;
+}
+
+/*오사이드바 간격*/
+.sidebar.right .toc {
+  margin-bottom: 3rem;
+}
+
+.sidebar.right .recent-notes {
+  margin-bottom: 2rem;
+}
+
+.sidebar.right .search {
+  margin-bottom: 1.5rem;
+}
