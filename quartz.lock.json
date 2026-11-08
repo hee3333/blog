@@ -7,11 +7,11 @@
       "commit": "9d20adc96b1b1fc6a095e009092132b46d61aae1",
       "installedAt": "2026-11-06T14:40:17.980Z"
     },
-    "note-properties": {
-      "source": "github:quartz-community/note-properties",
-      "resolved": "https://github.com/quartz-community/note-properties.git",
-      "commit": "6abae397e87c57ac9af9a9cd4a1567f22b686c91",
-      "installedAt": "2026-11-07T07:26:49.710Z"
+    "folder-page": {
+      "source": "github:hee3333/folder-page",
+      "resolved": "https://github.com/hee3333/folder-page.git",
+      "commit": "969aad912136d44f0b54f3f10ccb51846bcd9a84",
+      "installedAt": "2026-11-08T07:12:40.292Z"
     }
   }
 }
