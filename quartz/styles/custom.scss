@@ -242,6 +242,8 @@ article h3 {
 /*코드 글자색*/
 :root[saved-theme="light"] article p code {
   color: #248c65;
+  background: #e3e7e5;
+  font-weight: 700;
 }
 
 :root[saved-theme="light"] .toc button.toc-header > h3 {
@@ -525,18 +527,7 @@ article h3 {
   }
 }
 
-/* 오른쪽 목차를 전체 표시하고 내부 스크롤 제거 */
-.sidebar.right .toc {
-  flex: 0 0 auto;
-  max-height: none;
-  overflow: visible;
-}
-
-.sidebar.right .toc > ul.toc-content.overflow {
-  max-height: none;
-  overflow: visible;
-}
-
+/*태그 모음 제목 색*/
 :root[saved-theme="light"] .tag-cloud > h3 {
   color: #666666;
 }
@@ -552,4 +543,67 @@ article h3 {
 
 .sidebar.right .search {
   margin-bottom: 1.5rem;
+}
+
+/*글 목록 구분선과 간격*/
+ul.section-ul > li.section-li > .section {
+  border-bottom: 0.5px solid #c8c8c8 !important;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+ul.section-ul > li.section-li:last-child > .section {
+  border-bottom: 0 !important;
+}
+
+/*목록 태그 사이드바 침범 안 하게*/
+ul.section-ul .section-li ul.tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  max-height: 4rem;
+  overflow: hidden;
+  gap: 0.35rem;
+}
+
+/*태그 날짜 아래로*/
+.section-ul .section-li .page-meta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.section-ul .section-li .page-meta-row > .meta,
+.section-ul .section-li .page-meta-row > .tags {
+  margin: 0;
+}
+
+/*태그 모음 생략*/
+.tag-cloud {
+  min-width: 0;
+}
+
+.tag-cloud-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  max-height: 10rem;
+  overflow: hidden;
+}
+
+/*목차 스크롤바 없앰*/
+.sidebar.right .toc,
+.sidebar.right .toc ul.toc-content,
+.sidebar.right .toc ul.toc-content.overflow {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.sidebar.right .toc ul.toc-content a {
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
