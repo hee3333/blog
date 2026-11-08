@@ -22,5 +22,6 @@ published: 2026-11-07T19:42:41.956Z
 
 ## CTF 참가 내역
 
-DEADFACE
-![[00. Setting/00. 첨부파일/deadface-ctf-2026-competitor.png]]
+![[00. Setting/00. 첨부파일/deadface-ctf-2026-competitor.png|184]] ![[00. Setting/00. 첨부파일/Pasted image 20261109012133.png|268]]
+
+DEADFACE CTF - 61st
