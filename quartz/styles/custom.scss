@@ -515,10 +515,24 @@ article h3 {
   color: #248c65;
   font-size: 0.9rem;
   text-decoration: none;
-}
 
   small {
     opacity: 0.7;
   }
 
- 
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 오른쪽 목차를 전체 표시하고 내부 스크롤 제거 */
+.sidebar.right .toc {
+  flex: 0 0 auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.sidebar.right .toc > ul.toc-content.overflow {
+  max-height: none;
+  overflow: visible;
+}
