@@ -151,7 +151,7 @@ plugins:
     enabled: true
   - source: "@quartz-community/content-page"
     enabled: true
-  - source: "@quartz-community/folder-page"
+  - source: "github:hee3333/folder-page"
     enabled: true
   - source: "@quartz-community/tag-page"
     enabled: true
@@ -162,6 +162,20 @@ plugins:
       priority: 50
     options:
         title: "목록"
+        mapFn: |
+            (node) => {
+               if (!node.isFolder) return node
+
+               const countNotes = (folder) =>
+                  folder.children.reduce(
+                    (count, child) =>
+                      count + (child.isFolder ? countNotes(child) : 1),
+                    0,
+                  )
+
+               node.displayNameOverride = `${node.displayName} (${countNotes(node)})`
+               return node
+            }
   - source: "@quartz-community/graph"
     enabled: false
     layout:
