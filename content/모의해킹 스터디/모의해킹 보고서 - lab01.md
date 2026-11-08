@@ -1,9 +1,9 @@
 ---
 publish: true
 title: 모의해킹 보고서 - lab01
-description: phpmyadmin4.8.1의 취약점으로 원격접속, 권한 상승 성공
+description: phpmyadmin4.8.1의 취약점으로 원격접속, sudo -i로 권한 상승 성공
 created: 2026-10-16
-modified: 2026-11-08T13:04:13.794Z
+modified: 2026-11-08T13:09:02.009Z
 published: 2026-10-16
 tags:
   - Linux
@@ -86,15 +86,35 @@ su change로 bobbyz로 들어왔다.
 ## 6. 취약점
 
 ```
-cvs
+CVSS v4.0 점수: 10 / Critical  
+Macro vector: 000100  
+Exploitability: High  
+Complexity: High  
+Vulnerable system: High  
+Subsequent system: Medium  
+Exploitation: High  
+Security requirements: High
 ```
 
-### 6.1  
+### 6.1  phpmyadmin 로그인 초기값 변경 없이 사용
 
   **6.1.1 설명**
 
- -
+ - phpmyadmin 로그인 페이지에 초기 정보값으로 로그인이 가능했다.
+
+- 초기 로그인 정보를 사용하면 공격자가 phpmyadmin에 쉽게 접속해 DB 열람, 변조, 삭제가 가능하다.
 
   **6.1.2 조치방법**
 
--
+- 로그인 정보를 쉽게 유추할 수 없는 값으로 변경.
+
+### 6.2  취약점이 노출 되어 있는 phpmyadmin 4.8.1 버전 사용
+
+  **6.1.1 설명**
+
+- 취약점이 노출되어 있는 4.8.1 버전을 사용하고 있다.
+- 비밀번호가 노출되어 있어 로그인 정보로 원격 접속 가능, 정보 탈취가 가능하다.
+
+  **6.1.2 조치방법**
+
+- 최신 버전으로 패치 권고
