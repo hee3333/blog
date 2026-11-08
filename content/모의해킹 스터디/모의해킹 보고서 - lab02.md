@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab02
 description: Grafana의 취약점으로 접속, SSH의 프라이빗 키를 탈취해 원격 접속, gawk으로 shadow를 읽어 john으로 암호 크랙킹해 권한 탈취
 created: 2026-10-16
-modified: 2026-11-08T13:36:04.501Z
+modified: 2026-11-08T15:04:56.234Z
 published: 2026-10-16
 tags:
   - Linux
@@ -11,6 +11,8 @@ tags:
   - gawk
   - john
   - ssh
+  - gobuster
+  - nmap
 date: 2026-10-16
 lab: lab02
 ---

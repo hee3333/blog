@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab03
 description: 계정 없이 접근할 수 있는 SMB에서 찾은 SSH키를 ssh2john으로 해시화, john으로 크랙킹. SSH 원격접속, kdbx 파일을 찾아 keepass2john으로 해시화, john으로 크랙킹. keepass 접속해서 root 비밀번호 탈취, 원격 접속 성공.
 created: 2026-10-17
-modified: 2026-11-08T14:05:05.631Z
+modified: 2026-11-08T15:05:02.339Z
 published: 2026-10-17
 tags:
   - Linux
@@ -16,6 +16,8 @@ tags:
   - keepass2jhon
   - passphrase
   - john
+  - gobuster
+  - nmap
 date: 2026-10-17
 lab: lab03
 ---

@@ -3,12 +3,14 @@ publish: true
 title: 모의해킹 보고서 - lab01
 description: phpmyadmin4.8.1의 취약점으로 원격접속, sudo -i로 권한 상승 성공
 created: 2026-10-16
-modified: 2026-11-08T13:14:39.758Z
+modified: 2026-11-08T15:04:50.781Z
 published: 2026-10-16
 tags:
   - Linux
   - phpmyadmin
   - sudo-i
+  - gobuster
+  - nmap
 date: 2026-10-16
 lab: lab01
 ---

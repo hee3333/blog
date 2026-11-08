@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab04
 description: WPScan으로 admin 계정을 알아내 블로그를 cewl로 긁어 비밀번호 목록을 만든 후 hydra로 브루트 포스, wp-admin에 접속해서 웹쉘을 넣고 리버스쉘로 www-data 권한 접속. crontab에 리버스쉘 코드 넣어 root 권한 탈취 성공
 created: 2026-10-20
-modified: 2026-11-08T14:28:15.357Z
+modified: 2026-11-08T15:05:07.377Z
 published: 2026-10-20
 tags:
   - Linux
@@ -14,6 +14,8 @@ tags:
   - reverseshell
   - crontab
   - Wordpress
+  - gobuster
+  - nmap
 date: 2026-10-20
 lab: lab04
 ---
