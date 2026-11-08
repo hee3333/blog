@@ -1,6 +1,5 @@
 import test, { describe, afterEach } from "node:test"
 import assert from "node:assert"
-import { buildLayoutForEntries, resolveGroups } from "./config-loader"
 import { componentRegistry } from "../../components/registry"
 import type { QuartzComponent, QuartzComponentConstructor } from "../../components/types"
 import { PluginJsonEntry, LayoutPosition } from "./types"
