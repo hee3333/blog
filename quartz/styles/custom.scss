@@ -444,3 +444,20 @@ article h3 {
     box-shadow: none !important;
   }
 }
+
+
+:root[saved-theme="light"] #quartz-body {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.88)),
+    url("https://hee3333.github.io/blog/static/side01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+:root[saved-theme="light"] .center,
+:root[saved-theme="light"] .sidebar.right,
+:root[saved-theme="light"] .page-header,
+:root[saved-theme="light"] .page-footer {
+  background-color: transparent !important;
+}
