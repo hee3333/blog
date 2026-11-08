@@ -9,9 +9,13 @@ const currentLayout = await loadQuartzLayout()
 const byPageType = Object.fromEntries(
   Object.entries(currentLayout.byPageType).map(([pageType, pageLayout]) => [
     pageType,
-    pageLayout.right
-      ? { ...pageLayout, right: [...pageLayout.right, TagCloud] }
-      : pageLayout,
+    {
+      ...pageLayout,
+      right: [
+        ...(pageLayout.right ?? currentLayout.defaults?.right ?? []),
+        TagCloud,
+      ],
+    },
   ]),
 )
 
