@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab01
 description: phpmyadmin4.8.1의 취약점으로 원격접속, sudo -i로 권한 상승 성공
 created: 2026-10-16
-modified: 2026-11-08T13:14:09.789Z
+modified: 2026-11-08T13:14:39.758Z
 published: 2026-10-16
 tags:
   - Linux
@@ -100,8 +100,7 @@ Security requirements: High
 
   **6.1.1 설명**
 
- - phpmyadmin 로그인 페이지에 초기 정보값으로 로그인이 가능했다.
-
+- phpmyadmin 로그인 페이지에 초기 정보값으로 로그인이 가능했다.
 - 초기 로그인 정보를 사용하면 공격자가 phpmyadmin에 쉽게 접속해 DB 열람, 변조, 삭제가 가능하다.
 
   **6.1.2 조치방법**
