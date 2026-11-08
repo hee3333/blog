@@ -6,18 +6,18 @@ export default config
 
 const currentLayout = await loadQuartzLayout()
 
-const byPageType = Object.fromEntries(
-  Object.entries(currentLayout.byPageType).map(([pageType, pageLayout]) => [
-    pageType,
-    {
-      ...pageLayout,
-      right: [
-        ...(pageLayout.right ?? currentLayout.defaults?.right ?? []),
-        TagCloud,
-      ],
-    },
-  ]),
-)
+const folderPageLayout = currentLayout.byPageType.folder ?? {}
+const folderRight = folderPageLayout.right?.length
+  ? folderPageLayout.right
+  : currentLayout.defaults?.right ?? []
+
+const byPageType = {
+  ...currentLayout.byPageType,
+  folder: {
+    ...folderPageLayout,
+    right: [...folderRight, TagCloud],
+  },
+}
 
 export const layout = {
   ...currentLayout,
