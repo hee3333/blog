@@ -142,6 +142,39 @@ article li a.internal:not(.tag-link):hover {
   background-color: #ecf0f1;
 }
 
+.note-properties-value a.internal.tag-link {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  width: auto !important;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+:root[saved-theme="light"] .note-properties .note-properties-value:has(a.internal.tag-link) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.note-properties-value .note-properties-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.note-properties-value .note-properties-tags .note-properties-separator {
+  display: none;
+}
+
+.note-properties-value .note-properties-tags a.tag-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
 :root[saved-theme="light"] .note-properties .note-properties-value a.internal.tag-link::before {
   color: #248c65;
 }
