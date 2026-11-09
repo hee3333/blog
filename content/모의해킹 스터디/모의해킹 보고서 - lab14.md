@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab14
 description: 익명으로 접근 가능했던 FTP와 그렇게 얻은 계정 정보로 PRTG Network Monitor의 취약점을 공격해 NT AUTHORITY/SYSTEM 권한 탈취 성공
 created: 2026-11-09
-modified: 2026-11-09T05:42:51.990Z
+modified: 2026-11-09T06:09:34.720Z
 published: 2026-11-09
 tags:
   - Windows
@@ -50,12 +50,14 @@ lab: lab14
 
 ## 5. 모의해킹 수행 내용 
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109104549.png]]
-![[00. Setting/00. 첨부파일/Pasted image 20261109104625.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109104549.png|546]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109104625.png|544]]
+
 대상 서버를 포트 스캔 해보니 `FTP` 와 `HTTP`, `RPC`, `Netbois-ssn`, `SMB`  가 나온다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261109133315.png]]
-![[00. Setting/00. 첨부파일/Pasted image 20261109133111.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109133111.png|529]]
+
 `gobuster` 로 웹페이지를 스캔 후 `/index.htm`으로 접속해보니 `PRTG Network Monitor (NETMON)` 이 나온다.
 
 현재 로그인을 할 수 있는 정보가 없으니 익명으로 `FTP`부터 접속해본다.
@@ -65,11 +67,11 @@ Name: anonymous
 Password: anonymous@example.com
 ```
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109104749.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109104749.png|548]]
 
 접속 성공했다.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109111858.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109111858.png|544]]
 
 `C:\ProgramData\Paessler\PRTG Network Monitor` 에 접근해보니 PRTG에 대한 구성 정보들이 있다.
 
@@ -77,7 +79,7 @@ Password: anonymous@example.com
 
 PRTG Configuration.old.bak부터 받아본다.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109140650.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109140650.png|556]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261109140726.png]]
 
 prtgadmin의 비밀번호가 있다. 하지만 비밀번호가 맞지 않는다. 현재 버전의 비밀번호가 필요하다.
