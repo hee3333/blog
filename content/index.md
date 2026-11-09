@@ -8,13 +8,7 @@ published: 2026-11-07T19:42:41.956Z
 
 ## GitHub 활동
 
-<div style="padding: 15px;">
-  <img
-    src="https://ghchart.xqsit94.in/light:40c463/hee3333"
-    alt="GitHub Contributions"
-    style="width: 100%;"
-  >
-</div>
+<div style="background-color:#transparent;padding:15px;border-radius:8px;"><img src="https://contribkit.app/user/hee3333.svg?palette=github&background=transparent" alt="GitHub Contributions" style="width:100%;"></div>
 
 ## 모의해킹과 보안 공부 기록
 
