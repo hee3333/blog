@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab14
 description: 익명으로 접근 가능했던 FTP와 그렇게 얻은 계정 정보로 PRTG Network Monitor의 취약점을 공격해 NT AUTHORITY/SYSTEM 권한 탈취 성공
 created: 2026-11-09
-modified: 2026-11-09T06:09:34.720Z
+modified: 2026-11-09T06:09:56.999Z
 published: 2026-11-09
 tags:
   - Windows
@@ -80,7 +80,7 @@ Password: anonymous@example.com
 PRTG Configuration.old.bak부터 받아본다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261109140650.png|556]]
-![[00. Setting/00. 첨부파일/Pasted image 20261109140726.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109140726.png|543]]
 
 prtgadmin의 비밀번호가 있다. 하지만 비밀번호가 맞지 않는다. 현재 버전의 비밀번호가 필요하다.
 
@@ -92,7 +92,7 @@ prtgadmin의 비밀번호가 있다. 하지만 비밀번호가 맞지 않는다.
 
 안에 2019년도에 만들어진 `PRTG Configuration.dat` 파일이 있다. 비밀번호가 `2018`이 들어가니 현재 버전은 이 파일의 버전, 즉 `2019` 가 아닐까 추측해본다.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109141624.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109141624.png|604]]
 
 로그인 성공.
 
@@ -101,7 +101,7 @@ prtgadmin의 비밀번호가 있다. 하지만 비밀번호가 맞지 않는다.
 zip 파일의 18.1.37.13946은 프로그램 버전임을 알았다.
 취약점을 검색해보니 `CVE-2018-9276` 가 나왔다. PRTG Network Monitor의 인증된 명령 삽입 취약점.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261109134010.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261109134010.png|602]]
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261109140308.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261109133743.png]]
