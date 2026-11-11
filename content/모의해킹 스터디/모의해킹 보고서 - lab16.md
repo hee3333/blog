@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-11T19:51:45.038Z
+modified: 2026-11-11T19:56:32.560Z
 published: 2026-11-11
 date: 2026-11-11
 tags:
@@ -121,7 +121,7 @@ ROOT.war로 webapps로 배포 -> 경로가 /usr/local/tomcat/webapps/ROOT.war �
 
 1. `Tomcat`은 `WAR`의 파일 이름을 웹앱의 URL 경로로 쓴다. => `Tomcat`이 `ROOT.war`를 웹앱의 기본 경로인 `/` 에 배포한다(.war의 이름 따라감). =>**http://strutted.htb/ 경로에서 `Strutted`가 열린다.**
 
-2. \*\*`Apache Sturts`와 `tomcat`을 쓰고 있으니 ==🟡\`JSP\` 파일 처리가 가능하다.\*\* &#x20;==
+2. `Apache Sturts`와 `tomcat`을 쓰고 있으니 **`JSP` 파일 처리가 가능하다.**
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111170712.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261111170741.png]]
@@ -136,7 +136,8 @@ ROOT.war로 webapps로 배포 -> 경로가 /usr/local/tomcat/webapps/ROOT.war �
 
 그러므로,
 
-1. 정적 파일 업로드 경로를 벗어난 경로에 업로드를 해야 파일이 아닌 코드로 실행이 된다. => `JSP`는 `Tomcat`이 처리하고, `Tomcat`은 `ROOT.war`를 풀어 배포를 하니 `JSP` 쉘 코드는 `/`에서 실행된다. => `JSP`코드를 넣을 경로는 ==🟡\`http://strutted.htb/<파일\_이름>.jsp\`==가 된다.
+1. 정적 파일 업로드 경로를 벗어난 경로에 업로드를 해야 파일이 아닌 코드로 실행이 된다.
+   \=> `JSP`는 `Tomcat`이 처리하고, `Tomcat`은 `ROOT.war`를 풀어 배포를 하니 `JSP` 쉘 코드는 `/`에서 실행된다. => `JSP`코드를 넣을 경로는 ==\`http://strutted.htb/<파일\_이름>.jsp\`==가 된다.
 
 2. `ROOT.war`가 들어가는 경로로 가야 하니 정적 파일 업로드 되는 자리에서 두 번 올라간 경로에 들어가야 한다.  `/webapps/ROOT/uploads/<날짜_시간>/<파일이름>` -> ==🟡 \*\*\`../../<파일\_이름>.jsp\`\*\*==
 
@@ -235,7 +236,7 @@ _(name="Upload" 만 제대로 넣어주면 Disposition의 name은 uploadFileName
 
 먼저 root로 실행될 shell을 만들어준다.
 
-==🟡\*\*새 파일로 복사하면 보통 복사를 실행한 사용자가 소유자가 되므로\*\*== `root`가 `tcpdump`를 실행하면서 `bash`를 복사해 만든 `rootbash`의 소유자는 `root`가 된다.
+==\*\*새 파일로 복사하면 보통 복사를 실행한 사용자가 소유자가 되므로\*\*== `root`가 `tcpdump`를 실행하면서 `bash`를 복사해 만든 `rootbash`의 소유자는 `root`가 된다.
 `rootbash`에는 4755 권한을 준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154845.png]]
