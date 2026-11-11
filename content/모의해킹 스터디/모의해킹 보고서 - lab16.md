@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-11T19:56:32.560Z
+modified: 2026-11-11T20:01:20.176Z
 published: 2026-11-11
 date: 2026-11-11
 tags:
@@ -99,7 +99,7 @@ Apache struts를 쓰고 버전이 6.3.0.1이라는 걸 알 수 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111153133.png]]
 
-파일 업로드와 관련된 공개된 취약점이 있다. ==\`CVE-2024-53677\`==. 업로드하는 파일을 가로채서 조작한다 (FileUploadInterceptor).
+파일 업로드와 관련된 공개된 취약점이 있다. `CVE-2024-53677`. 업로드하는 파일을 가로채서 조작한다 (FileUploadInterceptor).
 
 동작하는 방식은
 
@@ -137,9 +137,9 @@ ROOT.war로 webapps로 배포 -> 경로가 /usr/local/tomcat/webapps/ROOT.war �
 그러므로,
 
 1. 정적 파일 업로드 경로를 벗어난 경로에 업로드를 해야 파일이 아닌 코드로 실행이 된다.
-   \=> `JSP`는 `Tomcat`이 처리하고, `Tomcat`은 `ROOT.war`를 풀어 배포를 하니 `JSP` 쉘 코드는 `/`에서 실행된다. => `JSP`코드를 넣을 경로는 ==\`http://strutted.htb/<파일\_이름>.jsp\`==가 된다.
+   \=> `JSP`는 `Tomcat`이 처리하고, `Tomcat`은 `ROOT.war`를 풀어 배포를 하니 `JSP` 쉘 코드는 `/`에서 실행된다. => `JSP`코드를 넣을 경로는 `http://strutted.htb/<파일_이름>.jsp`가 된다.
 
-2. `ROOT.war`가 들어가는 경로로 가야 하니 정적 파일 업로드 되는 자리에서 두 번 올라간 경로에 들어가야 한다.  `/webapps/ROOT/uploads/<날짜_시간>/<파일이름>` -> ==🟡 \*\*\`../../<파일\_이름>.jsp\`\*\*==
+2. `ROOT.war`가 들어가는 경로로 가야 하니 정적 파일 업로드 되는 자리에서 두 번 올라간 경로에 들어가야 한다.  `/webapps/ROOT/uploads/<날짜_시간>/<파일이름>` ->  **`../../<파일_이름>.jsp`**
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112015832.png]]
 
@@ -236,7 +236,7 @@ _(name="Upload" 만 제대로 넣어주면 Disposition의 name은 uploadFileName
 
 먼저 root로 실행될 shell을 만들어준다.
 
-==\*\*새 파일로 복사하면 보통 복사를 실행한 사용자가 소유자가 되므로\*\*== `root`가 `tcpdump`를 실행하면서 `bash`를 복사해 만든 `rootbash`의 소유자는 `root`가 된다.
+**새 파일로 복사하면 보통 복사를 실행한 사용자가 소유자가 되므로** `root`가 `tcpdump`를 실행하면서 `bash`를 복사해 만든 `rootbash`의 소유자는 `root`가 된다.
 `rootbash`에는 4755 권한을 준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154845.png]]
@@ -245,7 +245,9 @@ _(name="Upload" 만 제대로 넣어주면 Disposition의 name은 uploadFileName
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154953.png]]
 
-`sudo /usr/sbin/tcpdump -ln -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/privesc.sh -Z root`
+```
+sudo /usr/sbin/tcpdump -ln -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/privesc.sh -Z root
+```
 
 - `sudo`: 명령을 root 권한으로 실행
 - `-i eth0`: `eth0` 네트워크 인터페이스를 캡처
