@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-11T20:01:20.176Z
+modified: 2026-11-11T20:06:21.817Z
 published: 2026-11-11
 date: 2026-11-11
 tags:
@@ -234,14 +234,14 @@ _(name="Upload" 만 제대로 넣어주면 Disposition의 name은 uploadFileName
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154801.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154820.png]]
 
-먼저 root로 실행될 shell을 만들어준다.
+먼저 `root`로 실행될 shell을 만들어준다.
 
 **새 파일로 복사하면 보통 복사를 실행한 사용자가 소유자가 되므로** `root`가 `tcpdump`를 실행하면서 `bash`를 복사해 만든 `rootbash`의 소유자는 `root`가 된다.
-`rootbash`에는 4755 권한을 준다.
+`rootbash`에는 4755(그룹과 다른 사용자는 수정을 못 하도록) 권한을 준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154845.png]]
 
-만든 shell 파일에 실행 권한도 추가한다.
+만든 shell 파일엔 실행 권한을 추가한다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261111154953.png]]
 
