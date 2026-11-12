@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:28:18.965Z
+modified: 2026-11-12T18:33:53.763Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -246,7 +246,7 @@ source.venv310/bin/activate
 1. `/usr/bin/python3.10`
 2. `/opt/tools/mlflow_ctl/mlflowctl.py`
 
-두 개가 확인 된다.
+두 개가 확인 된다. `mlflowctl.py`를 `python3.10`으로, root 권한으로 실행할 수 있겠다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112182407.png]]
 
@@ -283,7 +283,7 @@ for path in PLUGINS_DIR.iterdir():
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113032810.png]]
 
-![[00. Setting/00. 첨부파일/Pasted image 20261112141953.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261113033046.png]]
 
 ## 6. 취약점
 
