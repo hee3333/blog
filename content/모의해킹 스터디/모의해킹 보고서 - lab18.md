@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T19:08:59.755Z
+modified: 2026-11-12T19:14:05.673Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -341,13 +341,13 @@ Security requirements: High
 
 - MLflow의 버전을 업그레이드 한다.
 
-### 6.2  
+### 6.2  비관리 계정이 비밀번호 없이 접근 가능한 sudo 명령
 
 <br> **6.2.1 설명**
 
-- `MLflow 2.14.1` 버전에 CVE-2024-37054 취약점이 노출되어 있었다.
-- 악성 페이로드가 포함된 모델을 업로드하고 불러올 때 리버스쉘이 실행되어 원격 접속이 가능했다.
+- `svcweb`, `devs` 등의 사용자 혹은 그룹이 `sudo -l`을 했을 때 비밀번호 없이 `mlflowctl.py`를 `root` 권한으로 실행이 가능했다.
+- `rootbash`를 탈취해 권한 상승이 가능했다.
 
 <br>**6.2.2 조치방법**
 
-- MLflow의 버전을 업그레이드 한다.
+- 필요하지 않으면 `NOPASSWD` 권한 제거
