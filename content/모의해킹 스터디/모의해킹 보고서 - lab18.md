@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T17:44:07.413Z
+modified: 2026-11-12T17:48:55.341Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -273,13 +273,13 @@ for path in PLUGINS_DIR.iterdir():
 
 2. `mlflowctl.py`(현재 파이썬 스크립트)가 들어있는 `Path(__file__).resolve().parent` (폴더의 절대 경로 => `/opt/tools/mlflow_ctl/` )를 `BASE_DIR`에 저장하고, `BASE_DIR`(`/opt/tools/mlflow_ctl/`) 안에 있는 `plugins` 폴더의 경로를 만들어 `PLUGINS_DIR`에 저장한다. => `PLUGINS_DIR`은 `/opt/tools/mlflow_ctl/plugins` 가 된다.<br><br>
    그리고 `plugins` 안의 하위 폴더를 하나씩 살펴보고, 폴더인지 확인하고, 그 하위 폴더를
-   python 모듈 검색 경로에 추가한다. `site.addsitedir(str(path))` 함수는 **폴더 안의 `.pth` 파일도 처리가 가능하다.** <br><br>
-
-   \=> 플러그인 하위 폴더 마다 호출이 되기 때문에 `plugins` 하위 폴더들은
+   python 모듈 검색 경로에 추가한다. `site.addsitedir(str(path))` 함수는 **폴더 안의 `.pth` 파일도 처리가 가능하다.** <br><br>   => 플러그인 하위 폴더 마다 호출이 되기 때문에 `plugins` 하위 폴더들은 다 `.pth` 처리가 가능하다.
 
 \*`PTH`: Python 사이트 폴더의 경로 설정 파일.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112181916.png]]
+
+`/opt/tools/mlflow_ctl/plugins` 에 가보면 `core`와 `dev`가 있다. 그중 `dev`는 `devs`그룹에 쓰기 권한이 있다. 앞서 확인 했을 때 `svcweb`의
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112141953.png]]
 
