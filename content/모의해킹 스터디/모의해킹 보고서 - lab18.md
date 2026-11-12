@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:52:57.179Z
+modified: 2026-11-12T18:59:06.568Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -158,7 +158,7 @@ REGISTERED_MODEL_NAME = "등록할 모델 이름"
 cmd = 'echo ">>> RCE PAYLOAD EXECUTED SUCCESSFULLY <<<" && echo > pwned.txt'
 ```
 
-모델을 불러오는 과정에서 cmd의 문자열(RCE PAYLOAD EXECUTED SUCCESSFULLY를 출력하고 이 출력 내용을 담은 pwned.txt 파일을 생성한다)을 실행한다고 한다. 이 cmd에 리버스쉘을 넣어볼 수 있다.
+모델을 불러오는 과정에서 cmd의 문자열(RCE PAYLOAD EXECUTED SUCCESSFULLY를 출력하고 이 출력 내용을 담은 `pwned.txt` 파일을 생성한다)을 실행한다고 한다. 이 cmd에 리버스쉘을 넣어볼 수 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112161324.png]]
 
@@ -309,10 +309,17 @@ sudo /usr/bin/python3.10 /opt/tools/mlflow_ctl/mlflowctl.py status
 ## 6. 취약점
 
 ```
-cvs
+CVSS v4.0 점수: 10 / Critical
+Macro vector: 000100
+Exploitability: High
+Complexity: High
+Vulnerable system: High
+Subsequent system: Medium
+Exploitation: High
+Security requirements: High
 ```
 
-### 6.1  
+### 6.1  취약점이 노출된 버전의 ㅡ
 
   **6.1.1 설명**
 
