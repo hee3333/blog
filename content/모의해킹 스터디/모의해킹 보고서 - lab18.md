@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T17:09:05.636Z
+modified: 2026-11-12T17:14:06.820Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -260,7 +260,7 @@ import sys
 import site
 ```
 
-① `path` 도구, `sys`, `site` 모듈을 불러온다. (import)
+1. `path` 도구, `sys`, `site` 모듈을 불러온다. (`import`)
 
 ```
 BASE_DIR = Path(__file__).resolve().parent
@@ -268,16 +268,17 @@ PLUGINS_DIR = BASE_DIR / "plugins"
 # make plugins importable
 for path in PLUGINS_DIR.iterdir():
     if path.is_dir():
-            site.addsitedir(str(path))
+        site.addsitedir(str(path))
 ```
 
-② 현재 파이썬 스크립트가 들어있는 폴더의 절대 경로 (`Path(__file__).resolve().parent`)
+2. 현재 파이썬 스크립트(`mlflowctl.py`)가 들어있는 폴더의 절대 경로 (`Path(__file__).resolve().parent`)를 `BASE_DIR`에 저장한다.
+   2.1
+
 ③ 사용자가 입력한 인자에 따라
 
 - `status`면 `mlflow_actions.check_status()` 실행
 - `backup-models`면 `backup_models.run()` 실행
 - `restart`면 `mlflow_actions.restart()` 실행
-  ①②③
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112181916.png]]
 
