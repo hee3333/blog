@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T17:19:05.794Z
+modified: 2026-11-12T17:23:25.786Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -271,9 +271,11 @@ for path in PLUGINS_DIR.iterdir():
         site.addsitedir(str(path))
 ```
 
-2. 현재 파이썬 스크립트(`mlflowctl.py`)가 들어있는 폴더의 절대 경로 (`Path(__file__).resolve().parent`)를 `BASE_DIR`에 저장하고, `BASE_DIR`(`/opt/tools/mlflow_ctl/`) 안에 있는 `plugins` 폴더의 경로를 만들어 `PLUGINS_DIR`에 저장한다. =>
+2. `mlflowctl.py`(현재 파이썬 스크립트)가 들어있는 `Path(__file__).resolve().parent` (폴더의 절대 경로 => `/opt/tools/mlflow_ctl/` )를 `BASE_DIR`에 저장하고, `BASE_DIR`(`/opt/tools/mlflow_ctl/`) 안에 있는 `plugins` 폴더의 경로를 만들어 `PLUGINS_DIR`에 저장한다. => `PLUGINS_DIR`은 `/opt/tools/mlflow_ctl/plugins` 가 된다.
 
-③ 사용자가 입력한 인자에 따라
+  => 이 플러그인의
+
+3. 사용자가 입력한 인자에 따라
 
 - `status`면 `mlflow_actions.check_status()` 실행
 - `backup-models`면 `backup_models.run()` 실행
