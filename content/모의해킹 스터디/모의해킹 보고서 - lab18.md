@@ -2,10 +2,21 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T19:23:52.093Z
+modified: 2026-11-12T19:27:53.604Z
 published: 2026-11-12
-date: 2026-11-12
 tags:
+  - linux
+  - vhost
+  - wfuzz
+  - gobuster
+  - mlflow
+  - CSV
+  - reverseshell
+  - venv
+  - sudo-l
+  - PTH
+  - rootbash
+date: 2026-11-12
 description:
 lab: lab18
 ---
@@ -28,7 +39,7 @@ lab: lab18
 이번 lab18 모의해킹에서는 초기 인증 정보를 변경하지 않은 MLflow, 취약점이 노출된 버전의 MLflow, 비관리 계정이 비밀번호 없이 접근 가능한 sudo 명령의 연계로 권한 상승에 성공했다.
 이는 외부에서 시작된 침해가 서버 전체에 대한 통제권 확보로 확대될 수 있음을 보여준다.
 
-보완을 위해 MLflow의 인증 정보를 변경하고. MLflow의 버전을 업그레이드 하고, 필요하지 않으면 `NOPASSWD` 권한 제거
+보완을 위해 MLflow의 인증 정보를 변경하고. MLflow의 버전을 업그레이드 하고, `NOPASSWD` 권한 제거, `/opt/tools/mlflow_ctl/plugins`의 모든 하위 폴더의 소유자를 root로 바꿔야 한다.
 
 ## 3. 정보 수집 대상
 
