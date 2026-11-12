@@ -1,8 +1,9 @@
 ---
 publish: true
 title: 모의해킹 보고서 - lab18
+description: mlfow에 초기 인증 정보로 로그인해서 버전을 알아내 취약점을 공격해 리버스쉘로 원격 접속했고, sudo -l로 비밀번호 없이 root 권한으로 실행이 가능한 명령을 찾았으며 .pth 파일에 bash를 실행하는 코드를 넣어 root 권한 상승에 성공했다.
 created: 2026-11-12
-modified: 2026-11-12T19:27:53.604Z
+modified: 2026-11-12T19:31:24.842Z
 published: 2026-11-12
 tags:
   - linux
@@ -17,7 +18,6 @@ tags:
   - PTH
   - rootbash
 date: 2026-11-12
-description:
 lab: lab18
 ---
 
