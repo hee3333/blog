@@ -2,10 +2,16 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-13T02:36:33.793Z
+modified: 2026-11-13T02:38:48.544Z
 published: 2026-11-11
-date: 2026-11-11
 tags:
+  - Linux
+  - struts
+  - JSP
+  - tomcat
+  - tcpdump
+  - rootbash
+date: 2026-11-11
 description:
 lab: lab16
 ---
