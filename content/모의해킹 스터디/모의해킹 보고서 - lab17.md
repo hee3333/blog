@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab17
 created: 2026-11-06
-modified: 2026-11-13T00:17:41.862Z
+modified: 2026-11-13T00:31:41.641Z
 published: 2026-11-06
 date: 2026-11-06
 tags:
@@ -58,7 +58,10 @@ _11월 6일 보고서가 누락되어 lab17로 이어서 적는다_
 
 ![[00. Setting/00. 첨부파일/2026-11-06_16-01.png]]
 
-`gobuster`로 하위 페이지를 조사해보니 `/host-manager` 가 나온다.
+`gobuster`로 하위 페이지를 조사해보니 `/host-manager`, `manager` 가 나온다.
+
+![[00. Setting/00. 첨부파일/Pasted image 20261113093110.png]]
+`/host-manager` 페이지.
 
 ![[00. Setting/00. 첨부파일/2026-11-06_16-07.png]]
 
