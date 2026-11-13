@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-13T01:24:09.023Z
+modified: 2026-11-13T02:09:34.466Z
 published: 2026-11-11
 date: 2026-11-11
 tags:
@@ -284,11 +284,11 @@ Exploitation: High
 Security requirements: High
 ```
 
-### 6.1  
+### 6.1  취약점이 노출된 Apache Struts 버전 사용
 
 <br> **6.1.1 설명**
 
--
+- Apache Struts 6.3.0.1버전에 CVE-2024-53677
 
 <br> **6.1.2 조치방법**
 
