@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab17
 created: 2026-11-06
-modified: 2026-11-13T00:46:37.955Z
+modified: 2026-11-13T00:50:07.515Z
 published: 2026-11-06
 date: 2026-11-06
 tags:
@@ -122,11 +122,12 @@ Security requirements: High
 
 <br> **6.1.1 설명**
 
--
+- `/host-manager`, `/manager` 페이지에 예시로 인증 정보 `tomcat:s3cret`이 노출 되어 있었다.
+- 노출된 인증 정보로 `Apache Tomcat`관리자 페이지에 쉽게 접근할 수 있었다.
 
 <br> **6.1.2 조치방법**
 
--
+- 예시로 적은 인증 정보를 다른 사
 
 <br><br>
 
