@@ -1,8 +1,9 @@
 ---
 publish: true
 title: 모의해킹 보고서 - lab17
+description: 8080 포트의 톰캣에 /manager 주소가 있었고, 인증 정보가 노출 되어 있었다. 로그인해 WAR 파일로 리버스쉘을 업로드해 NT AUTHORITY/SYSTEM 권한을 탈취할 수 있었다.
 created: 2026-11-06
-modified: 2026-11-13T01:21:07.739Z
+modified: 2026-11-13T01:23:16.628Z
 published: 2026-11-06
 tags:
   - Windows
@@ -11,7 +12,6 @@ tags:
   - WAR
   - reverseshell
 date: 2026-11-06
-description:
 lab: lab17
 ---
 
