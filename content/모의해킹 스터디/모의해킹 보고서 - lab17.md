@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab17
 description: 8080 포트의 톰캣에 /manager 주소가 있었고, 인증 정보가 노출 되어 있었다. 로그인해 WAR 파일로 리버스쉘을 업로드해 NT AUTHORITY/SYSTEM 권한을 탈취할 수 있었다.
 created: 2026-11-06
-modified: 2026-11-13T01:23:16.628Z
+modified: 2026-11-13T02:45:58.138Z
 published: 2026-11-06
 tags:
   - Windows
@@ -53,7 +53,7 @@ _11월 6일 보고서가 누락되어 lab17로 이어서 적는다_
 
 ![[00. Setting/00. 첨부파일/2026-11-06 161856.png]]
 
-포트 스캔을 해보니 `HTTP` 8080포트가 나왔다. `Apache Tomcat`을 쓴다.
+포트 스캔을 해보니 `HTTP` 8080포트가 나왔다. `Apache Tomcat`을 쓰고 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261112051623.png]]
 
