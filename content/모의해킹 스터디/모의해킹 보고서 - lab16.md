@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab16
 created: 2026-11-11
-modified: 2026-11-13T02:26:45.998Z
+modified: 2026-11-13T02:31:48.726Z
 published: 2026-11-11
 date: 2026-11-11
 tags:
@@ -295,13 +295,13 @@ Security requirements: High
 
 - 취약점이 노출된 버전의 Apache Struts를 업그레이드 한다.
 
-### 6.1  취약점이 노출된 Apache Struts 버전 사용
+### 6.2  비관리 계정이 비밀번호 없이 접근 가능한 sudo 명령
 
-<br> **6.1.1 설명**
+<br> **6.2.1 설명**
 
-- Apache Struts 6.3.0.1 버전에 CVE-2024-53677 취약점이 노출되어 있었다.
-- 매직 바이트로 조작된 JSP 파일을 올렸을 때 업로드 경로까지 조작하면 JSP 파일의 리버스 쉘을 실행할 수 있었다.
+- `james`의 `sudo -l`에 `NOPASSWD: /usr/sbin/tcpdump`가 있었다.
+- `tcpdump`의 `-z` 옵션으로 `rootbash` 교체 명령을 실행해 `root` 권한 상승이 가능했다.
 
-<br> **6.1.2 조치방법**
+<br> **6.2.2 조치방법**
 
-- 취약점이 노출된 버전의 Apache Struts를 업그레이드 한다.
+- `james`의 `tcpdump` 무암호 권한을 제거한다.
