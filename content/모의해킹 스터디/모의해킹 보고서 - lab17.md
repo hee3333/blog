@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab17
 created: 2026-11-06
-modified: 2026-11-13T00:34:44.540Z
+modified: 2026-11-13T00:38:15.092Z
 published: 2026-11-06
 date: 2026-11-06
 tags:
@@ -61,13 +61,14 @@ _11월 6일 보고서가 누락되어 lab17로 이어서 적는다_
 `gobuster`로 하위 페이지를 조사해보니 `/host-manager`, `manager` 가 나온다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113093249.png]]
-![[00. Setting/00. 첨부파일/Pasted image 20261113093110.png]]
-`/host-manager` 페이지. 로그인 창에서 cancel을 누르면 사용자 이름과 비밀번호가 보인다.
+![[00. Setting/00. 첨부파일/Pasted image 20261113093714.png]]
+
+`/host-manager` 페이지. 로그인 창에서 cancel을 누르면 사용자 이름과 비밀번호 예시가 보인다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113093443.png]]
 ![[00. Setting/00. 첨부파일/2026-11-06_16-07.png]]
 
-들어가보면 /manager/html로 리다이렉트 된다. 사용자 이름과 비밀번호가 적혀있다.
+`/manager` 도 마찬가지. 사용자 이름과 비밀번호 예시가 적혀있다.
 
 ![[00. Setting/00. 첨부파일/2026-11-06_16-07_1.png]]
 
