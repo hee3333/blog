@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab17
 created: 2026-11-06
-modified: 2026-11-13T01:04:55.082Z
+modified: 2026-11-13T01:11:40.756Z
 published: 2026-11-06
 date: 2026-11-06
 tags:
@@ -118,7 +118,7 @@ Exploitation: High
 Security requirements: High
 ```
 
-### 6.1  관리자 페이지 인증 정보 노출
+### 6.1  관리자 페이지 /host-manager, /manager 주소 노출
 
 <br> **6.1.1 설명**
 
@@ -127,12 +127,12 @@ Security requirements: High
 
 <br> **6.1.2 조치방법**
 
-- 예시로 적은 인증 정보를 실제 관리자 정보를 유추할 수 없게 바꾼다.
+- 예시로 적은 인증 정보를 삭제한다.
 - 기존 노출되었던 인증 정보도 변경한다.
 
 <br><br>
 
-### 6.2  
+### 6.2  관리자 페이지 인증 정보 노출
 
 <br> **6.2.1 설명**
 
