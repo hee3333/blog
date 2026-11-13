@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab17
 created: 2026-11-06
-modified: 2026-11-13T00:38:15.092Z
+modified: 2026-11-13T00:46:37.955Z
 published: 2026-11-06
 date: 2026-11-06
 tags:
@@ -108,15 +108,34 @@ jsp 파일 이름을 확인한다.
 ## 6. 취약점
 
 ```
-cvs
+CVSS v4.0 점수: 10 / Critical
+Macro vector: 000100
+Exploitability: High
+Complexity: High
+Vulnerable system: High
+Subsequent system: Medium
+Exploitation: High
+Security requirements: High
 ```
 
-### 6.1  
+### 6.1  관리자 페이지 인증 정보 노출
 
-  **6.1.1 설명**
+<br> **6.1.1 설명**
 
 -
 
-  **6.1.2 조치방법**
+<br> **6.1.2 조치방법**
+
+-
+
+<br><br>
+
+### 6.2  관리자 페이지 인증 정보 노출
+
+<br> **6.2.1 설명**
+
+-
+
+<br> **6.2.2 조치방법**
 
 -
