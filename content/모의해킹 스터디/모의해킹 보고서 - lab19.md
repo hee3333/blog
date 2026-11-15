@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:05:51.465Z
+modified: 2026-11-15T06:10:39.981Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -128,7 +128,7 @@ nxc smb lab -d SENDAI -u users.txt -p '' --continue-on-success
 1. elliot.yates
 2. thomas.powell
 
-두 이름이 빈 비밀번호일 가능성이 높다. 빈 비밀번호이니 임의로 비밀번호를 지정해줄 수 있다.
+두 이름이 빈 비밀번호일 가능성이 높다. (나머지는 빈 비밀번호가 아니라서 매치가 안 됐다 (LOGON\_FAILURE)) 빈 비밀번호이니 임의로 비밀번호를 지정해줄 수 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113142352.png]]
 
@@ -137,7 +137,7 @@ nxc smb [MASK] -d SENDAI -u thomas.powell -p '' \
   -M change-password -o NEWPASS='M0on!Lake_2026#x'
 ```
 
-thomas.powell의 비밀번호를 임의로 지정해준다.
+`thomas.powell`의 비밀번호를 임의로 지정해준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113142710.png]]
 
@@ -188,7 +188,7 @@ sudo runuser -u postgres -- psql -c 'ALTER DATABASE postgres REFRESH COLLATION V
 - `psql -c '...'`: SQL 명령 실행
 - `ALTER DATABASE ... REFRESH COLLATION VERSION`: 데이터베이스에 기록된 정렬 버전 정보 갱신
 
-현재 규칙으로 갱신해준다.
+현재 규칙인 2.43으로 갱신해준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113143552.png]]
 
@@ -202,6 +202,8 @@ Default credentials:
     password: neo4j
     opening http://localhost:7474/
 ```
+
+\*`Neo4j`: 그래프 데이터베이스. 데이터를 표처럼 행과 열로 저장하기보다 노드와 관계로 저장
 
 기본 인증 정보와 접속 주소를 얻었다. 접속 후엔 비밀번호를 바꾸고 새 비밀번호는 `/etc/bhapi/bhapi.json` 에 업데이트하라고 알리고 있다.
 
