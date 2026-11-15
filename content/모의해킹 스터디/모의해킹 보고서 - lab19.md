@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:15:43.400Z
+modified: 2026-11-15T06:21:04.682Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -259,7 +259,7 @@ RETURN p
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113145346.png]]
 
-Outbound Object Control 목록을 확인해보면 `MGTSVS$`의 `ReadGMSAPassword` 권한도 있다.
+Outbound Object Control 목록을 확인해보면 `MGTSVC$`의 `ReadGMSAPassword` 권한도 있다.
 
 `ReadGMSAPassword`: `gMSA` 계정의 관리 비밀번호를 `LDAP`로 읽을 수 있는 권한
 
@@ -293,7 +293,7 @@ bloodyad --host [MASK] -u thomas.powell -p 'M0on!Lake_2026#x' -d sendai.vl add g
 nxc ldap lab -d sendai.vl -u thomas.powell -p 'M0on!Lake_2026#x' --gmsa
 ```
 
-`nxc`로 `thomas`가 `LDAP`에 로그인해서 읽을 권한이 있는 `gMSA` 비밀번호를 조회해본다.
+`nxc`로 `LDAP`에 접근해서 `ADMSVC`그룹에 들어간 `thomas`가 읽을 권한이 있는 인증 정보 <br> -> `gMSA` 비밀번호를 조회해본다.
 
 `mgtsvc$`의 계정의 비밀번호를 읽을 수 있다는 정보와 인증 해시 `NTLM`를 확인했다.
 
