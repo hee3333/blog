@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:31:47.001Z
+modified: 2026-11-15T06:35:28.481Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -365,7 +365,7 @@ certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] 
 
 `clifford` 계정으로 도메인의 `ADCS` 구성을 조회해 조작 권한이 있는 인증서를 찾으려 했지만.....너무 길다.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261115062511.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261115153433.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261115062636.png]]
 
 ```
@@ -374,11 +374,13 @@ certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] 
 
 `CA-OPERTORS` 와 관련된 부분만 다시 찾는다.
 
-`sendaicomputer` 이란 `ADCS` 인증서 템플릿이 나왔고 `CA-OPERATORS`에 모든 컨트롤 권한이 있으며 취약점으로 권한 설정이 위험하다는 판단이 나왔다.
+`sendaicomputer` 이란 `ADCS` 인증서 템플릿이 나왔고 인증 기관의 이름인 `sendai-DC-CA`, `CA-OPERATORS`에 모든 컨트롤 권한이 있으며 취약점으로 권한 설정이 위험하다는 판단이 나왔다.
 
 \=> `CA-OPERATORS`는 `sendaicomputor` 인증서에 `GenericAll` 권한이 있다.
 
-`ESC`: 도메인 권한 상승(Domain Escalation)으로 이어질 수 있는 인증서 서비스 설정 문제를 구분하는 이름표 (`ESC4`는 인증서 템플릿의 권한 설정이 위험한 경우)
+`ESC`: 도메인 권한 상승(Domain Escalation)으로 이어질 수 있는 인증서 서비스 설정 문제를 구분하는 이름표
+
+`ESC4`: 인증서 템플릿의 권한 설정이 위험한 경우
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113171852.png]]
 
@@ -394,7 +396,7 @@ certipy-ad template -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MA
 
 `CA-OPERATORS` 권한으로 `SendaiComputer` 템플릿을 `ESC1` 요청이 가능하도록 바꾼 다음,
 
-\*`ESC1`: 낮은 권한의 사용자가 다른 계정 이름으로 인증서를 요청할 수 있게 설정
+\*`ESC1`: 낮은 권한의 사용자가 다른 계정 이름으로 인증서를 요청할 수 있게 설정된 경우
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115065820.png]]
 
@@ -413,9 +415,9 @@ certipy-ad req -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] -
 ```
 
 - `certipy-ad req`: 인증서 발급을 요청
-- `-u`, `-p`: 요청에 사용할 Clifford 계정의 로그인 정보
+- `-u`, `-p`: 요청에 사용할 `clifford` 계정의 로그인 정보
 - `-dc-ip`: 도메인 컨트롤러 IP
-- `-target dc.sendai.vl`, `-target-ip `: CA에 연결할 호스트 이름과 IP
+- `-target dc.sendai.vl`, `-target-ip `: `CA`에 연결할 호스트 이름과 IP
 - `-ca sendai-DC-CA`: 인증서를 발급할 인증 기관 이름
 - `-template SendaiComputer`: 사용할 인증서 템플릿
 - `-upn 'Administrator@sendai.vl'`: 인증서에 `Administrator`의 `UPN`을 지정
