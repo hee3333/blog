@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T07:51:49.974Z
+modified: 2026-11-15T07:56:48.621Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -496,8 +496,10 @@ Security requirements: High
 
 <br> **6.3.1 설명**
 
-- `thomas`의 `SUPPORT`그룹이 `ADMSVC`에 `GENERIC`
+- `thomas`의 `SUPPORT`그룹이 `ADMSVC`에 `GenericAll` 권한을 가지고 있었고 `ADMSCV`는 `MGTSVC$`에 `gMSA` 비밀번호 읽기 권한이 있었다.
+- `thomas`를 `ADMSVC`에 추가하여 `gMSA`의 인증 해시를 얻었다.
 
 <br> **6.3.2 조치방법**
 
-- 어렵고 복잡한 비밀번호 설정 권고
+- `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거
+- \`\`
