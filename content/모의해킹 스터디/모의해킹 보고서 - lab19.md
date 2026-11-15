@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T07:26:07.361Z
+modified: 2026-11-15T07:27:35.398Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -159,7 +159,7 @@ nxc smb [MASK] -d SENDAI -u thomas.powell -p 'M0on!Lake_2026#x'
 - `-p 'M0on!Lake_2026#x'`: 그 사용자의 비밀번호
 - `-ns [MASK]`: DNS 질의를 보낼 서버
 - `-dc dc.sendai.vl`: 정보를 조회할 도메인 컨트롤러
-- `-c All`: 지원되는 수집 항목을 폭넓게 수집. All이라고 모든 게 나온 것이 아니라 `LoggedOn`(현재 로그인해있는 사용자를 수집하는 항목)을 제외한 전체 항목이다. `LoggedOn`까지 보고 싶으면 `All,LoggedOn` 으로 추가.
+- `-c All`: 지원되는 수집 항목을 폭넓게 수집. All이라고 모든 게 나온 것이 아니라 `LoggedOn`(현재 로그인해있는 사용자를 수집하는 항목)을 제외한 전체 항목이다. `LoggedOn`까지 보고 싶으면 `All,LoggedOn`으로 추가.
 - `--zip`: 수집된 JSON 파일들을 ZIP 하나로 묶는다.
 
 `BloodHound`의 정보를 `20261113142744_bloodhound.zip` 으로 내려받았다.
@@ -174,7 +174,7 @@ but the operating system provides version 2.43.
 힌트: Rebuild all objects in the template database that use the dafault collation and run ALTER DATABASE template1 REFRESH COLLATION VERSION, or build postgreSQL with the right library version
 ```
 
-`bloodhound-start`로 bloodhound를 실행하려 했더니 `template1`이 문자 정렬 버전이 맞지 않는다고 한다.
+`bloodhound-start`로 `bloodhound`를 실행하려 했더니 `template1`이 문자 정렬 버전이 맞지 않는다고 한다.
 
 기본 데이터베이스(template1)는 문자 정렬(Collation)버전을 2.42 버전을 쓰는데 OS는 2.43 버전을 써서 규칙 불일치 문제가 생겼고, 현재 규칙인 2.43으로 갱신해야 한다고 알리고 있다.
 
