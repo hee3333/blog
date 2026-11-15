@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T08:06:47.130Z
+modified: 2026-11-15T08:11:51.093Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -510,7 +510,7 @@ Security requirements: High
 
 - `clifford`의 계정 인증 정보가 `helpdesk.exe`에 하드 코딩 되어 있었다.
 
-- `clifford`의 인증 정보로 ADCS 인증서를 찾아 낮은 권한으로도 다른 계정의 인증서를 요청할 수 있게 바꾸어 `Administrator`의 비밀번호를 바꿀 수 있었다. <br> **6.3.2 조치방법**
+- `clifford`의 인증 정보로 ADCS 인증서의 `sendaicomputer` 템플릿을 찾아 취약점을 확인할 수 있었다. <br> **6.3.2 조치방법**
 
 - 노출된 비밀번호를 교체
 
@@ -518,13 +518,13 @@ Security requirements: High
 
 - 안전한 비밀번호 저장소 사용
 
-### 6.4 CA-OPERATORS 그룹의 ADCS 인증서의 GenericAll 권한 소유
+### 6.4 CA-OPERATORS 그룹의 ADCS 인증서  GenericAll 권한 소유
 
 <br> **6.3.1 설명**
 
-- `clifford`의 계정 인증 정보가 `helpdesk.exe`에 하드 코딩 되어 있었다.
+- `CA-OPERATORS`가 `ADCS`인증서 중 `SendaiComputer` 템플릿의 `Full Control`을 소유함.
 
-- `clifford`의 인증 정보로 ADCS 인증서를 찾아 낮은 권한으로도 다른 계정의 인증서를 요청할 수 있게 바꾸어 `Administrator`의 비밀번호를 바꿀 수 있었다. <br> **6.3.2 조치방법**
+- 이 권한으로 `ESC`를 4 -> 1로 바꿔 낮은 구\ <br> **6.3.2 조치방법**
 
 - 노출된 비밀번호를 교체
 
