@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:26:37.325Z
+modified: 2026-11-15T06:31:47.001Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -343,13 +343,15 @@ Get-ChildItem 'HKLM:\SYSTEM\CurrentControlSet\Services' |
 ![[00. Setting/00. 첨부파일/Pasted image 20261115054320.png]]
 `clifford.davey`의 인증 정보를 찾은 이유:
 
-`bloodhound`에서 `cliffort.davey`의 그룹을 조회해보면 `DOMAIN USERS`, `CA-OPERATOR`, `STAFF`가 나온다. `DOMAIN USERS`와 `STAFF`는 일반 사용자 그룹 이름이지만 `CA-OPERATOR`는 인증 운영과 관련된 이름인 것 같다.  AD의 인증은 => `ADCS`
+`bloodhound`에서 `cliffort.davey`의 그룹을 조회해보면 `DOMAIN USERS`, `CA-OPERATOR`, `STAFF`가 나온다. `DOMAIN USERS`와 `STAFF`는 일반 사용자 그룹 이름이지만 `CA-OPERATOR`는 인증 운영과 관련된 이름인 것 같다.  `AD`의 인증은 => `ADCS`
 
-\=>곧, `clifford.davey`의 그룹인 `CA-OPERATORS`는 `ADCS`, AD 인증서에 대한 관리 능력이 있을 지도 모른다.
+\=>곧, `clifford.davey`의 그룹인 `CA-OPERATORS`는 `ADCS`, `AD` 인증서에 대한 조작이 가능할 지도 모른다.
 
 \*`ADCS`: Active Directory 인증서 서비스
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115055701.png]]
+
+위 가설을 확인해보자.
 
 ```
 certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] -stdout
@@ -361,7 +363,7 @@ certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] 
 - `-dc-ip 10.129.234.66`: 조회할 도메인 컨트롤러의 IP
 - `-stdout`: 결과를 파일로 저장하지 않고 터미널에 출력
 
-`clifford` 계정으로 도메인의 `ADCS` 구성을 조회했지만.....너무 길다.
+`clifford` 계정으로 도메인의 `ADCS` 구성을 조회해 조작 권한이 있는 인증서를 찾으려 했지만.....너무 길다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115062511.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261115062636.png]]
@@ -372,7 +374,7 @@ certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] 
 
 `CA-OPERTORS` 와 관련된 부분만 다시 찾는다.
 
-`sendaicomputer` 이란 `ADCS` 인증서 템플릿이 나왔고 `ca-operators`에 모든 컨트롤 권한이 있으며 취약점으로 권한 설정이 위험하다는 판단이 나왔다.
+`sendaicomputer` 이란 `ADCS` 인증서 템플릿이 나왔고 `CA-OPERATORS`에 모든 컨트롤 권한이 있으며 취약점으로 권한 설정이 위험하다는 판단이 나왔다.
 
 \=> `CA-OPERATORS`는 `sendaicomputor` 인증서에 `GenericAll` 권한이 있다.
 
@@ -388,11 +390,11 @@ certipy-ad template -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MA
 - `-u`, `-p`: 수정 권한이 있는 도메인 계정과 비밀번호
 - `-dc-ip`: 도메인 컨트롤러 주소
 - `-template sendaiComputer`: 수정할 템플릿 이름
-- `-write-default-configuration`: Certipy의 기본 ESC1 취약 설정을 템플릿에 적용
+- `-write-default-configuration`: `Certipy`의 기본 `ESC1` 취약 설정을 템플릿에 적용
 
-`CA-OPERATORS` 권한으로 `SendaiComputer` 템플릿을 ESC1 요청이 가능하도록 바꾼 다음,
+`CA-OPERATORS` 권한으로 `SendaiComputer` 템플릿을 `ESC1` 요청이 가능하도록 바꾼 다음,
 
-\*`ESC1`: 낮은 권한의 사용자가 다른 계정 이름으로 인증서를 요청할 수 있게 설정된 경우
+\*`ESC1`: 낮은 권한의 사용자가 다른 계정 이름으로 인증서를 요청할 수 있게 설정
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115065820.png]]
 
