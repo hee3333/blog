@@ -3,12 +3,24 @@ publish: true
 title: 모의해킹 보고서 - lab19
 description: SMB 게스트 접근으로 빈 비밀번호의 사용자를 알아내고 NXC로 비밀번호 지정, bloodhound로 AD에 접근해 그룹 권한을 알아내고 bloodyAD로 권한 그룹에 사용자를 추가해 WinRM에 접속. 하드 코딩된 정보를 알아내어 사용자의 그룹 권한 확인, ADCS 인증서 수정 권한을 얻어 Administrator의 인증서를 발급 받고 권한 상승에 성공했다.
 created: 2026-11-13
-modified: 2026-11-15T08:51:26.159Z
+modified: 2026-11-15T08:55:50.871Z
 published: 2026-11-13
 tags:
   - Windows
   - NXC
   - SMB
+  - bloodhound
+  - bloodhound_python
+  - GenericAll
+  - LDAP
+  - gMSA
+  - bloodyAD
+  - WinRM
+  - 하드코딩
+  - ADCS
+  - ESC
+  - SID
+  - certipy_ad
 date: 2026-11-13
 lab: lab19
 ---
@@ -319,7 +331,7 @@ Get-CimInstance Win32_Process | Select-Object ProcessId, Name, CommandLine | For
 Get-cimInstance Win32_Service | Select-Object Name, State,StartName, PathName
 ```
 
-\*`Gete-CimInstance`: `Windows`의 관리 정보(CIM/WMI)를 조회하는 PowerShell 명령
+\*`Get-CimInstance`: `Windows`의 관리 정보(CIM/WMI)를 조회하는 PowerShell 명령
 
 `clifford.davey`의 비밀번호를 찾는다. 둘 다 허가 거부가 뜬다. 현재 계정으로는 실행 중인 프로세스 정보도, 서비스 정보도 조회가 어렵다.
 
