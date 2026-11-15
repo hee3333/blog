@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:35:28.481Z
+modified: 2026-11-15T06:41:29.009Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -374,7 +374,7 @@ certipy-ad find -u 'clifford.davey@sendai.vl' -p 'RFmoB2WplgE_3p' -dc-ip [MASK] 
 
 `CA-OPERTORS` 와 관련된 부분만 다시 찾는다.
 
-`sendaicomputer` 이란 `ADCS` 인증서 템플릿이 나왔고 인증 기관의 이름인 `sendai-DC-CA`, `CA-OPERATORS`에 모든 컨트롤 권한이 있으며 취약점으로 권한 설정이 위험하다는 판단이 나왔다.
+`sendaicomputer`란 `ADCS` 인증서 템플릿과 인증 기관의 이름인 `sendai-DC-CA`가 나왔고 , `CA-OPERATORS`에 이 인증서에 대한 모든 컨트롤 권한이 있어 권한 설정이 위험하다는 취약점이 나왔다.
 
 \=> `CA-OPERATORS`는 `sendaicomputor` 인증서에 `GenericAll` 권한이 있다.
 
@@ -406,7 +406,7 @@ Get-ADUser Administrator
 
 `Administrator`의 `ADuser` 정보에서 `SID`를 조회하고,
 
-\*`SID`: 계정의 고유 식별자
+\*`SID`: 계정의 고유 식별자. 전체 SID는 도메인 SID와 RID를 붙여 만드는데, 보통 admin의 RID는 500.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113172543.png]]
 
