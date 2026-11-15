@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T07:46:50.048Z
+modified: 2026-11-15T07:51:49.974Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -496,7 +496,7 @@ Security requirements: High
 
 <br> **6.3.1 설명**
 
--
+- `thomas`의 `SUPPORT`그룹이 `ADMSVC`에 `GENERIC`
 
 <br> **6.3.2 조치방법**
 
