@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:10:39.981Z
+modified: 2026-11-15T06:15:43.400Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -233,9 +233,11 @@ web 주소는 `http://127.0.0.1:8080`
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113144644.png]]
 
-`20261113142744_bloodhound.zip`를 업로드 해준다.
+`bloodhound-python`으로 수집한 `20261113142744_bloodhound.zip`를 업로드 해준다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113144711.png]]
+
+CYPHER에 검색한다.
 
 ```
 MATCH p=(u:User {name:'THOMAS.POWELL@SENDAI.VL'})
@@ -247,9 +249,11 @@ RETURN p
 
 `GenericAll`: 대상 AD 객체에 대한 전체 제어 권한. **그룹 구성원을 변경하거나 사용자이면 비밀번호를 바꾸는 등의 권한이 있다.**
 
+`Cypher`: `Neo4j` 데이터베이스를 검색하는 질의 언어
+
 ![[00. Setting/00. 첨부파일/Pasted image 20261113144740.png]]
 
-`thomas.powell`은 `SUPPORT` 그룹에 속했고, `SUPPORT`그룹은  `ADMSVC` 그룹의 `GenericAll` 권한을 가지고 있다.
+`thomas.powell`은 `SUPPORT` 그룹에 속하고, `SUPPORT`그룹은  `ADMSVC` 그룹의 `GenericAll` 권한을 가지고 있다.
 
 \=> `thomas`는 `ADMSVC` 그룹 구성원을 변경하거나 비밀번호를 바꿀 수 있다.
 
@@ -263,7 +267,7 @@ Outbound Object Control 목록을 확인해보면 `MGTSVS$`의 `ReadGMSAPassword
 
 \*`LDAP`: `Active Directory`에 정보를 요청하는 통신 방식. `Active Directory`가 사용자·그룹·컴퓨터 정보가 담긴 회사 주소록이라면, `LDAP`는 그 주소록을 검색하는 방법.
 
-\*`ADMSVC` 권한을 가진 계정으로 조회하면 `MGTSVC$`의 비밀번호 정보를 얻고, 그 계정으로 인증을 시도할 수 있다.
+`ADMSVC` 권한을 가진 계정으로 조회하면 `MGTSVC$`의 비밀번호 정보를 얻고, 그 계정으로 인증을 시도할 수 있다.
 
 \=> 즉, `thomas.powell`은 `SUPPORT`그룹을 통해 `ADMSVC` 그룹을 수정할 수 있는 권한이 있고 그 권한으로 자신을 `ADMSVC` 구성원으로 추가하여 `MGTSVC$`의 gMSA 비밀번호를 읽을 수 있다.
 
