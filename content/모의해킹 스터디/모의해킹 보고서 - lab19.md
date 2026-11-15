@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T07:18:53.179Z
+modified: 2026-11-15T07:26:07.361Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -149,14 +149,14 @@ nxc smb [MASK] -d SENDAI -u thomas.powell -p 'M0on!Lake_2026#x'
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113143041.png]]
 
-`BloodHound`: Active Directory의 사용자, 그룹, 컴퓨터와 권한 관계를 그래프로 보여주는 도구
+`AD`: Active Directory의 약자. 회사나 조직의 Windows 계정, 컴퓨터, 그룹, 권한 정보를 한 곳에서 관리하는 디렉터리 서비스.
 
-`BloodHound Python`: BloodHound용 AD 정보 수집기
+`BloodHound`: Active Directory의 사용자, 그룹, 컴퓨터와 권한 관계를 그래프로 보여주는 도구
 
 - `bloodhound-python`: BloodHound용 AD 정보 수집기
 - `-d sendai.vl`: 조사할 도메인
 - `-u thomas.powell`: 로그인 사용자
-- `-p 'M0on!Lake_2026#x'`: 그 사용자의 비밀번호.
+- `-p 'M0on!Lake_2026#x'`: 그 사용자의 비밀번호
 - `-ns [MASK]`: DNS 질의를 보낼 서버
 - `-dc dc.sendai.vl`: 정보를 조회할 도메인 컨트롤러
 - `-c All`: 지원되는 수집 항목을 폭넓게 수집. All이라고 모든 게 나온 것이 아니라 `LoggedOn`(현재 로그인해있는 사용자를 수집하는 항목)을 제외한 전체 항목이다. `LoggedOn`까지 보고 싶으면 `All,LoggedOn` 으로 추가.
