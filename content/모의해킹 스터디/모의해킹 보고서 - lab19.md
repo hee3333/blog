@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-14T22:11:01.763Z
+modified: 2026-11-15T06:05:51.465Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -49,7 +49,7 @@ lab: lab19
 
 대상 서버를 포트 스캔 해보니 `DNS`, `HTTP`.....`LDAP`, `SMB` 포트가 열려있다.
 
-`dc.sendai.vl` 도메인 이름이 보인다. `HTTP`는 단순 `IIS` 페이지이고 아직은 어디서 인증 정보를 찾을 수 없다.
+`dc.sendai.vl` 도메인 이름이 보인다. `HTTP`는 단순 `IIS` 페이지이고 아직은 인증 정보를 찾을 수 없다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113133659.png]]
 
@@ -57,7 +57,7 @@ lab: lab19
 smbclient -L //lab -U 'a%' -N
 ```
 
-아직은 정보가 없으니 비밀번호는 비워 놓은 채로 테스트용 이름으로 `a`를 넣어본다. `SMB` 공유 폴더를  검색해보니 `config`, `NETLOGON`, `sendai`, `SYSVOL`, `User` 폴더가 공유 되어 있다.
+정보가 없으니 비밀번호는 비워 놓은 채로 테스트용 이름으로 `a`를 넣어본다. `SMB` 공유 폴더를  검색해보니 `config`, `NETLOGON`, `sendai`, `SYSVOL`, `User` 폴더가 공유 되어 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261113140155.png]]
 
