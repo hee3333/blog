@@ -1,12 +1,15 @@
 ---
 publish: true
 title: 모의해킹 보고서 - lab19
+description: SMB 게스트 접근으로 빈 비밀번호의 사용자를 알아내고 NXC로 비밀번호 지정, bloodhound로 AD에 접근해 그룹 권한을 알아내고 bloodyAD로 권한 그룹에 사용자를 추가해 WinRM에 접속. 하드 코딩된 정보를 알아내어 사용자의 그룹 권한 확인, ADCS 인증서 수정 권한을 얻어 Administrator의 인증서를 발급 받고 권한 상승에 성공했다.
 created: 2026-11-13
-modified: 2026-11-15T08:41:59.217Z
+modified: 2026-11-15T08:51:26.159Z
 published: 2026-11-13
-date: 2026-11-13
 tags:
-description:
+  - Windows
+  - NXC
+  - SMB
+date: 2026-11-13
 lab: lab19
 ---
 
