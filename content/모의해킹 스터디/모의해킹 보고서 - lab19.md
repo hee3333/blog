@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T06:21:04.682Z
+modified: 2026-11-15T06:26:37.325Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -293,9 +293,9 @@ bloodyad --host [MASK] -u thomas.powell -p 'M0on!Lake_2026#x' -d sendai.vl add g
 nxc ldap lab -d sendai.vl -u thomas.powell -p 'M0on!Lake_2026#x' --gmsa
 ```
 
-`nxc`로 `LDAP`에 접근해서 `ADMSVC`그룹에 들어간 `thomas`가 읽을 권한이 있는 인증 정보 <br> -> `gMSA` 비밀번호를 조회해본다.
+`nxc`로 `LDAP`에 접근해서 `ADMSVC`그룹에 들어간 `thomas`가 읽을 권한이 있는 인증 정보 <br> -> `mgtsvc$`의 권한으로 볼 수 있는 `gMSA` 비밀번호를 조회해본다.
 
-`mgtsvc$`의 계정의 비밀번호를 읽을 수 있다는 정보와 인증 해시 `NTLM`를 확인했다.
+`mgtsvc$`의 계정의 비밀번호를 읽을 수 있다는 정보와 인증 해시 `NTLM: 88d544b552c4763c0333db7e48708a0d` 를 확인했다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115040228.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261115045521.png]]
@@ -341,8 +341,11 @@ Get-ChildItem 'HKLM:\SYSTEM\CurrentControlSet\Services' |
 비밀번호 `RFmoB2WplgE_3p` 를 얻었다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261115054320.png]]
+`clifford.davey`의 인증 정보를 찾은 이유:
 
 `bloodhound`에서 `cliffort.davey`의 그룹을 조회해보면 `DOMAIN USERS`, `CA-OPERATOR`, `STAFF`가 나온다. `DOMAIN USERS`와 `STAFF`는 일반 사용자 그룹 이름이지만 `CA-OPERATOR`는 인증 운영과 관련된 이름인 것 같다.  AD의 인증은 => `ADCS`
+
+\=>곧, `clifford.davey`의 그룹인 `CA-OPERATORS`는 `ADCS`, AD 인증서에 대한 관리 능력이 있을 지도 모른다.
 
 \*`ADCS`: Active Directory 인증서 서비스
 
