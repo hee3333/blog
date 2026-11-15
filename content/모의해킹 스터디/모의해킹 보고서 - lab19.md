@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T07:56:48.621Z
+modified: 2026-11-15T08:01:38.333Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -501,5 +501,17 @@ Security requirements: High
 
 <br> **6.3.2 조치방법**
 
-- `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거
-- \`\`
+- `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거, 권한을 필요한 관리자에게만 부여.
+- `gMSA` 비밀번호 읽기 권한도 최소한의 계정에게로 제한
+
+### 6.3  하드 코딩된 인증 정보 노출
+
+<br> **6.3.1 설명**
+
+- `clifford`의 계정 인증 정보가 `helpdesk.exe`에 하드 코딩 되어 있었다.
+
+- `clifford`의 인증 정보로 ADCS 인증서를 찾아 <br> **6.3.2 조치방법**
+
+- `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거, 권한을 필요한 관리자에게만 부여.
+
+- `gMSA` 비밀번호 읽기 권한도 최소한의 계정에게로 제한
