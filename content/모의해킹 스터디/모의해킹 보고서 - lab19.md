@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab19
 created: 2026-11-13
-modified: 2026-11-15T08:01:38.333Z
+modified: 2026-11-15T08:06:47.130Z
 published: 2026-11-13
 date: 2026-11-13
 tags:
@@ -510,8 +510,24 @@ Security requirements: High
 
 - `clifford`의 계정 인증 정보가 `helpdesk.exe`에 하드 코딩 되어 있었다.
 
-- `clifford`의 인증 정보로 ADCS 인증서를 찾아 <br> **6.3.2 조치방법**
+- `clifford`의 인증 정보로 ADCS 인증서를 찾아 낮은 권한으로도 다른 계정의 인증서를 요청할 수 있게 바꾸어 `Administrator`의 비밀번호를 바꿀 수 있었다. <br> **6.3.2 조치방법**
 
-- `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거, 권한을 필요한 관리자에게만 부여.
+- 노출된 비밀번호를 교체
 
-- `gMSA` 비밀번호 읽기 권한도 최소한의 계정에게로 제한
+- 서비스 실행 파일에 노출된 비밀번호 삭제
+
+- 안전한 비밀번호 저장소 사용
+
+### 6.4 CA-OPERATORS 그룹의 ADCS 인증서의 GenericAll 권한 소유
+
+<br> **6.3.1 설명**
+
+- `clifford`의 계정 인증 정보가 `helpdesk.exe`에 하드 코딩 되어 있었다.
+
+- `clifford`의 인증 정보로 ADCS 인증서를 찾아 낮은 권한으로도 다른 계정의 인증서를 요청할 수 있게 바꾸어 `Administrator`의 비밀번호를 바꿀 수 있었다. <br> **6.3.2 조치방법**
+
+- 노출된 비밀번호를 교체
+
+- 서비스 실행 파일에 노출된 비밀번호 삭제
+
+- 안전한 비밀번호 저장소 사용
