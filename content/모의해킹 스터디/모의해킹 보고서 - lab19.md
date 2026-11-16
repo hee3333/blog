@@ -3,7 +3,7 @@ publish: true
 title: 모의해킹 보고서 - lab19
 description: SMB 게스트 접근으로 빈 비밀번호의 사용자를 알아내고 NXC로 비밀번호 지정, bloodhound로 AD에 접근해 그룹 권한을 알아내고 bloodyAD로 권한 그룹에 사용자를 추가해 WinRM에 접속. 하드 코딩된 정보를 알아내어 사용자의 그룹 권한 확인, ADCS 인증서 수정 권한을 얻어 Administrator의 인증서를 발급 받고 권한 상승에 성공했다.
 created: 2026-11-13
-modified: 2026-11-15T14:41:55.085Z
+modified: 2026-11-16T00:00:37.213Z
 published: 2026-11-13
 tags:
   - Windows
@@ -486,6 +486,8 @@ Exploitation: High
 Security requirements: High
 ```
 
+<br><br>
+
 ### 6.1  SMB의 익명/게스트 권한 접근 허용
 
 <br> **6.1.1 설명**
@@ -496,7 +498,7 @@ Security requirements: High
 <br> **6.1.2 조치방법**
 
 - 게스트/익명 로그인을 차단
-- 공유 및 접근 권한을 최소 권한으로 조정
+- 공유 및 접근 권한을 최소 권한으로 조정<br><br>
 
 ### 6.2  만료 대상 계정에 설정된 빈 비밀번호
 
@@ -507,7 +509,7 @@ Security requirements: High
 
 <br> **6.2.2 조치방법**
 
-- 어렵고 복잡한 비밀번호 설정 권고
+- 어렵고 복잡한 비밀번호 설정 권고<br><br>
 
 ### 6.3  과도한 AD 그룹 권한
 
@@ -519,7 +521,7 @@ Security requirements: High
 <br> **6.3.2 조치방법**
 
 - `SUPPORT` 그룹의 `ADMSVC`에 대한 권한을 제거, 권한을 필요한 관리자에게만 부여.
-- `gMSA` 비밀번호 읽기 권한도 최소한의 계정에게로 제한
+- `gMSA` 비밀번호 읽기 권한도 최소한의 계정에게로 제한<br><br>
 
 ### 6.4  하드 코딩된 인증 정보 노출
 
@@ -533,7 +535,7 @@ Security requirements: High
 
 - 서비스 실행 파일에 노출된 비밀번호 삭제
 
-- 안전한 비밀번호 저장소 사용
+- 안전한 비밀번호 저장소 사용<br><br>
 
 ### 6.5 과하게 허용된 ADCS 인증서 GenericAll 권한
 
@@ -543,4 +545,4 @@ Security requirements: High
 
 - 이 권한으로 `ESC`를 4 -> 1로 바꿔 낮은 권한으로도 다른 계정의 인증서를 바꿀 수 있게 설정하여 `Administrator` 인증서를 발급 받고 `LDAP`에 인증, 비밀번호를 수정할 수 있었다.\ <br> **6.5.2 조치방법**
 
-- 템플릿 수정 권한을 엄격하게 제한한다.
+- 템플릿 수정 권한을 엄격하게 제한한다.<br><br>
