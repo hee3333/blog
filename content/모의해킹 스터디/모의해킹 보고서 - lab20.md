@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T04:06:50.905Z
+modified: 2026-11-19T19:45:00.798Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
