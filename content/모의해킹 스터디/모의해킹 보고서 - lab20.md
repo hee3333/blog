@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:18:26.626Z
+modified: 2026-11-19T20:23:15.502Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -346,12 +346,14 @@ if __name__=="__main__":
 
 최종 알림 내용의 메세지와, 앱이 실행되는 환경이 적혀있다.
 
-\=> `XML`형식을 읽고, 내용의 값들을 꺼내 `data`에 담고 `template`에 입력하면 `eval()` 식이 괄호 안 {template}의 값을
+\=> 자신의 주소에서 요청하는 `XML`형식을 읽고, 내용의 값들을 꺼내 `data`에 담고 `template`에 입력하면 `eval()` 식이 괄호 안 `{template}`의 값을 해석하고 계산해서 실행한다. 최종 알림 내용도 더해 출력한다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151433.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151715.png]]
 
-실험 삼아 `firstname`의 내용을 {1+1}로 넣어본다.
+`xml` 형식을 짜고 요청을 보내는 python 코드를 만들어 실험 삼아 `firstname`의 내용을 `{1+1}`로 넣어본다.
+`Patient 2 User (M), 26 years old, recieved from Test at 20261117123000`
+이 최종 출력 됐다. `template`의 내용인 `1+1`이 계산 됐음을 알 수 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
 
