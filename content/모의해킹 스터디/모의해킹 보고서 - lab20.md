@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:07:04.541Z
+modified: 2026-11-19T20:12:36.502Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -344,9 +344,14 @@ if __name__=="__main__":
     app.run("127.0.0.1",54321, threaded=True)
 ```
 
-![[00. Setting/00. 첨부파일/Pasted image 20261117151433.png]]
+최종 알림 내용의 메세지와, 앱이 실행되는 환경이 적혀있다.
 
+\=> `XML`형식을 읽고, 내용의 값들을 꺼내 data에 담고
+
+![[00. Setting/00. 첨부파일/Pasted image 20261117151433.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151715.png]]
+
+실험 삼아 firstname의 내용을 {1+1}로 넣어본다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
 
