@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T19:45:00.798Z
+modified: 2026-11-19T19:50:33.222Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -287,7 +287,10 @@ def template(first, last, sender, ts, dob, gender):
     template = f"Patient {first} {last} ({gender}), {{datetime.now().year - year_of_birth}} years old, received from {sender} at {ts}"
 ```
 
-이 줄은 바깥쪽 f-string으로 `first`, `last` 같은 값을 문장에 넣어. `{{...}}`처럼 중괄호를 두 번 쓴 부분은 이 단계에서 실제 중괄호 하나로 남겨 둬. 그래서 결과 문자열에 `{datetime.now().year - year_of_birth}`가 들어가.
+이 줄은 바깥쪽 f-string으로 `first`, `last` 같은 값을 문장에 넣는다. `{{...}}`처럼 중괄호를 두 번 쓴 부분은 이 단계에서 실제 중괄호 하나로 남겨 둔다.
+-> 그래서 결과 문자열에 `{datetime.now().year - year_of_birth}`가 들어간다.
+
+`f-string`: Python에서 문자열 안에 변수나 계산 결과를 넣는 문법
 
 ```
     try:
