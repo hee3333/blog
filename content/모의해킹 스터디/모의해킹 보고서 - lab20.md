@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:33:23.096Z
+modified: 2026-11-19T20:37:08.863Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -381,7 +381,7 @@ PY
 `Patient 2 User (M), 26 years old, recieved from Test at 20261117123000`
 이 최종 출력 됐다. `template`의 내용인 `1+1`이 계산 됐음을 알 수 있다.
 
-\*이 코드는 python3 -c 'import urllib.requrest url=http://127.0.0.1:54321~~~'  한 줄 명령과 같다. 왜 굳이 입력값으로 쓰는가?
+\*이 코드는 `python3 -c 'import urllib.requrest url=http://127.0.0.1:54321~~~'`  한 줄 명령과 같다. 왜 굳이 입력값으로 쓰는가?
 \=> 저렇게 쓰면 쌍따옴표 홑따옴표를 자유롭게 쓸 수 있다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
@@ -407,7 +407,7 @@ xml = """<patient>
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117170755.png]]
 
-대기해놓은 포트에서
+대기해놓은 포트에서 `root` 셸이 연결되어 최고 권한 탈취에 성공했다.
 
 ## 6. 취약점
 
