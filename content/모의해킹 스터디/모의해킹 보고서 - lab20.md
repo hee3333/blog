@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:03:20.933Z
+modified: 2026-11-19T20:07:04.541Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -299,9 +299,10 @@ def template(first, last, sender, ts, dob, gender):
         return f"[EVAL_ERROR] {e}"  
 ```
 
-다음 줄에서 결과 문자열을 다시 f-string으로 `eval()`한다. 이때 남아 있던 중괄호 안의 내용이 Python 코드로 평가된다. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있어.
+다음 줄에서 결과 문자열을 다시 f-string으로 `eval()`한다. 이때 남아 있던 중괄호 안의 내용이 Python 표현식으로 평가된다. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있다.
 
 `eval()`: evaluate. 문자열을 Python 표현식으로 해석해서 실행하고, 그 결과를 돌려주는 함수
+`표현식`:  계산하거나 값을 만들어 내는 코드 조각
 
 ```
 @app.route("/addPatient", methods=["POST"])
@@ -311,7 +312,7 @@ def receive():
         
 ```
 
-`/addPatient`에 POST 요청이 오면 실행돼. 요청이 서버 자신의 주소인 `127.0.0.1`에서 오지 않으면 거부해.
+`/addPatient`에 POST 요청이 오면 실행되고 요청이 서버 자신의 주소인 `127.0.0.1`에서 오지 않으면 거부한다.
 
 ```
     try:
@@ -327,8 +328,10 @@ def receive():
     
 ```
 
-요청 본문을 문자열로 읽고 XML 문서로 파싱해. 잘못된 XML이면 `XML ERROR`를 돌려줘.
-XML에서 `firstname`, `lastname`, `sender_app`, `timestamp`, `birth_date`, `gender` 값을 꺼내 `data`에 담아.
+요청 본문을 문자열로 읽고 XML 문서로 파싱한다. 잘못된 XML이면 `XML ERROR`를 돌려준다.
+XML에서 `firstname`, `lastname`, `sender_app`, `timestamp`, `birth_date`, `gender` 값을 꺼내 `data`에 담는다.
+
+`파싱`: parsing. 글자나 코드를 규칙에 따라 읽고 그 구조를 알아내는 것.
 
 ```
     notification = template(data["firstname"],data["lastname"],data["sender_app"],data["timestamp"],data["birth_date"],data["gender"])
