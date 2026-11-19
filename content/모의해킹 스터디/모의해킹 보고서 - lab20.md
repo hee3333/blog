@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T19:50:33.222Z
+modified: 2026-11-19T20:03:20.933Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -299,7 +299,9 @@ def template(first, last, sender, ts, dob, gender):
         return f"[EVAL_ERROR] {e}"  
 ```
 
-다음 줄에서 결과 문자열을 다시 f-string으로 `eval()`해. 이때 남아 있던 중괄호 안의 내용이 Python 표현식으로 평가돼. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있어. 네가 `{1+1}`을 넣었을 때 응답에서 `2`가 나온 게 그 동작을 확인한 거야.
+다음 줄에서 결과 문자열을 다시 f-string으로 `eval()`한다. 이때 남아 있던 중괄호 안의 내용이 Python 코드로 평가된다. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있어.
+
+`eval()`: evaluate. 문자열을 Python 표현식으로 해석해서 실행하고, 그 결과를 돌려주는 함수
 
 ```
 @app.route("/addPatient", methods=["POST"])
