@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:42:55.735Z
+modified: 2026-11-20T17:45:50.197Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -378,4 +378,5 @@ Security requirements: High
 
 <br> **6.2.2 조치방법**
 
-- `Support-bundles` 안에 개인키를 삭제하
+- `Support-bundles` 안에 기존 개인키를 삭제.
+- `Support-bundles` 폴더 접근 권한을 제한한다.
