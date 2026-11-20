@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:27:46.585Z
+modified: 2026-11-20T17:35:55.468Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -373,7 +373,8 @@ Security requirements: High
 
 <br> **6.2.1 설명**
 
-- Support-bundles 폴더 안에 `operator_id_ed25519.bak`
+- Support-bundles 폴더 안에 `operator_id_ed25519.bak` 키가 있었다.
+-
 
 <br> **6.2.2 조치방법**
 
