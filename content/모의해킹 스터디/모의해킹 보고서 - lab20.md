@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-20T15:42:12.582Z
+modified: 2026-11-20T15:44:34.363Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -287,7 +287,7 @@ def template(first, last, sender, ts, dob, gender):
     template = f"Patient {first} {last} ({gender}), {{datetime.now().year - year_of_birth}} years old, received from {sender} at {ts}"
 ```
 
-이 줄은 바깥쪽 f-string으로 `first`, `last` 같은 값을 문장에 넣는다. `{{...}}`처럼 중괄호를 두 번 쓴 부분은 이 단계에서 실제 중괄호 하나로 남겨 둔다.
+이 줄은 바깥쪽 `f-string`으로 `first`, `last` 같은 값을 문장에 넣는다. `{{...}}`처럼 중괄호를 두 번 쓴 부분은 이 단계에서 실제 중괄호 하나로 남겨 둔다.
 -> 그래서 결과 문자열에 `{datetime.now().year - year_of_birth}`가 들어간다.
 
 `f-string`: Python에서 문자열 안에 변수나 계산 결과를 넣는 문법
@@ -299,7 +299,7 @@ def template(first, last, sender, ts, dob, gender):
         return f"[EVAL_ERROR] {e}"  
 ```
 
-다음 줄에서 결과 문자열을 다시 f-string으로 `eval()`한다. 이때 남아 있던 중괄호 안의 내용이 Python 표현식으로 평가된다. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있다.
+다음 줄에서 결과 문자열을 다시 `f-string`으로 `eval()`한다. 이때 남아 있던 중괄호 안의 내용이 Python 표현식으로 평가된다. 사용자 입력에도 중괄호가 허용되므로, 입력이 단순한 이름으로만 취급되지 않고 표현식으로 실행될 수 있다.
 
 `eval()`: evaluate. 문자열을 Python 표현식으로 해석해서 실행하고, 그 결과를 돌려주는 함수
 `표현식`:  계산하거나 값을 만들어 내는 코드 조각
