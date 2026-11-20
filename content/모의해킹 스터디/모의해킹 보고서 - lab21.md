@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-19T19:56:59.817Z
+modified: 2026-11-20T17:02:42.014Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -358,11 +358,12 @@ Exploitation: High
 Security requirements: High
 ```
 
-### 6.1  
+### 6.1  **NiFi 웹 UI** 인증/권한 제한이 허술
 
 <br> **6.1.1 설명**
 
--
+- 접속자가 `ExecuteProcess` 같은 프로세서를 구성해 NiFi 서비스 권한으로 명령을 실행하는 것이 가능했다.
+- 리버스쉘을 넣어 원격 접속이 가능했다.
 
 <br>; **6.1.2 조치방법**
 
