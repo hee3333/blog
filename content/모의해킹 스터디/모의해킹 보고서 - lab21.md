@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:35:55.468Z
+modified: 2026-11-20T17:42:55.735Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -373,9 +373,9 @@ Security requirements: High
 
 <br> **6.2.1 설명**
 
-- Support-bundles 폴더 안에 `operator_id_ed25519.bak` 키가 있었다.
--
+- `Support-bundles` 폴더 안에 `operator_id_ed25519.bak` 키가 있었다.
+- 개인키를 공격자의 로컬로 가져와 `operator` 계정으로 원격 접속이 가능했다.
 
 <br> **6.2.2 조치방법**
 
-- 명령 실행 등 제한된 컴포넌트의 생성·수정 권한은 신뢰된 관리자에게만 부여
+- `Support-bundles` 안에 개인키를 삭제하
