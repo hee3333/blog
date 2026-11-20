@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-20T16:07:48.692Z
+modified: 2026-11-20T16:13:09.951Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -445,12 +445,11 @@ Security requirements: High
 - `Mirth properties` 파일에 최소 권한 제한을 해준다.
 - 노출된 인증 정보는 변경한다.
 
-### 6.3  
+### 6.3  root 권한으로 실행 가능한 취약점이 있는 Mirth Connect의 알림 서비스
 
 <br> **6.3.1 설명**
 
-- 권한 제한 없는 `Mirth properties` 파일에 데이터베이스 크리덴셜 정보가 평문으로 노출되어 있었다.
-- 노출된 크리덴셜 정보로 `Maria DB`에 접근해 사용자 이름과 해시된 비밀번호를 찾을 수 있었다.
+- `eval()` 식 안의 내용이 해석되고 계산이 된다.
 
 <br> **6.3.2 조치방법**
 
