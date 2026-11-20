@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:45:50.197Z
+modified: 2026-11-20T17:52:57.724Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -377,6 +377,18 @@ Security requirements: High
 - 개인키를 공격자의 로컬로 가져와 `operator` 계정으로 원격 접속이 가능했다.
 
 <br> **6.2.2 조치방법**
+
+- `Support-bundles` 안에 기존 개인키를 삭제.
+- `Support-bundles` 폴더 접근 권한을 제한한다.
+
+### 6.3  OPC UA 제어 변수에 과도한 쓰기 권한
+
+<br> **6.3.1 설명**
+
+- `Support-bundles` 폴더 안에 `operator_id_ed25519.bak` 키가 있었다.
+- 개인키를 공격자의 로컬로 가져와 `operator` 계정으로 원격 접속이 가능했다.
+
+<br> **6.3.2 조치방법**
 
 - `Support-bundles` 안에 기존 개인키를 삭제.
 - `Support-bundles` 폴더 접근 권한을 제한한다.
