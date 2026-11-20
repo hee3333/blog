@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T18:02:43.369Z
+modified: 2026-11-20T18:12:52.989Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -385,7 +385,7 @@ Security requirements: High
 
 <br> **6.3.1 설명**
 
-- `sudo -l`의 내용을 보니 `/usr/local/sbin/helix-maint-console` 있었다.
+- `sudo -l`의 내용을 보니 `/usr/local/sbin/helix-maint-console`이 있었다.
 - 조건을 맞춰 정비창을 열어 root의 권한으로 셸을 열 수 있었다.
 
 <br> **6.3.2 조치방법**
