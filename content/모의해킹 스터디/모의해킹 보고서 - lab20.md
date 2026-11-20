@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-20T16:13:09.951Z
+modified: 2026-11-20T16:17:22.290Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -449,9 +449,9 @@ Security requirements: High
 
 <br> **6.3.1 설명**
 
-- `eval()` 식 안의 내용이 해석되고 계산이 된다.
+- `eval()` 식 안의 내용이 Python으로 해석되고 계산이 된다.
+- `base64`로 인코딩 된 리버스쉘을 디코딩하고 해석하도록 코드를 넣어서 원격 접속에 성공했다.
 
 <br> **6.3.2 조치방법**
 
-- `Mirth properties` 파일에 최소 권한 제한을 해준다.
-- 노출된 인증 정보는 변경한다.
+-
