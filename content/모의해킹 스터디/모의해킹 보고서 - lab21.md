@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:13:20.774Z
+modified: 2026-11-20T17:27:46.585Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -111,7 +111,7 @@ Argument Delimiter: ,
 
 칼리로 가져온 후 `SSH` 접속을 위해 적당한 권한 부여를 해준다.
 
-![[00. Setting/00. 첨부파일/Pasted image 20261118114558.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261121022511.png]]
 ![[00. Setting/00. 첨부파일/Pasted image 20261118114618.png]]
 
 프라이빗 키로 `SSH` 접속에 성공했다.
@@ -367,7 +367,7 @@ Security requirements: High
 
 <br> **6.1.2 조치방법**
 
-- 명령 실행 등 제한된 컴포넌트의 생성·수정 권한은 신뢰된 관리자에게만 부여
+- 명령 실행 등 제한된 컴포넌트의 생성, 수정 권한은 신뢰된 관리자에게만 부여한다.
 
 ### 6.2  Support-bundles 안에 포함된 SSH 개인 키
 
