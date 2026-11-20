@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T18:28:20.620Z
+modified: 2026-11-20T18:33:14.928Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -401,4 +401,5 @@ Security requirements: High
 
 <br> **6.4.2 조치방법**
 
-- 인증 없이 sudo의 권한으로
+- 인증 없이 root로 실행할 수 있는 권한을 제거한다.
+- 서비스를 신뢰 된 관리자만 생성, 수정할 수 있게 제한한다.
