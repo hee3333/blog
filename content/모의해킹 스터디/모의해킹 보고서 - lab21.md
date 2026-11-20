@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T17:04:42.327Z
+modified: 2026-11-20T17:13:20.774Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -369,12 +369,11 @@ Security requirements: High
 
 - 명령 실행 등 제한된 컴포넌트의 생성·수정 권한은 신뢰된 관리자에게만 부여
 
-### 6.2  **NiFi 웹 UI** 인증/권한 제한이 허술
+### 6.2  Support-bundles 안에 포함된 SSH 개인 키
 
 <br> **6.2.1 설명**
 
-- 접속자가 `ExecuteProcess` 같은 프로세서를 구성해 NiFi 서비스 권한으로 명령을 실행하는 것이 가능했다.
-- 리버스쉘을 넣어 원격 접속이 가능했다.
+- Support-bundles 폴더 안에 `operator_id_ed25519.bak`
 
 <br> **6.2.2 조치방법**
 
