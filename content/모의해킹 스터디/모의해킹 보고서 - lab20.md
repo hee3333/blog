@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-19T20:37:08.863Z
+modified: 2026-11-20T14:38:25.970Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -422,7 +422,7 @@ Exploitation: High
 Security requirements: High
 ```
 
-### 6.1  
+### 6.1  Mirth Connect 버전
 
 <br> **6.1.1 설명**
 
