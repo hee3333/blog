@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-20T14:38:25.970Z
+modified: 2026-11-20T14:43:26.191Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -422,12 +422,13 @@ Exploitation: High
 Security requirements: High
 ```
 
-### 6.1  Mirth Connect 버전
+### 6.1  취약점이 노출된 Mirth Connect 버전
 
 <br> **6.1.1 설명**
 
--
+- Mirth Connect 4.4.0 버전에 CVE-2023-43208 취약점이 노출되어 있었다.
+- 인증 없이 원격으로 리버스쉘을 연결해 서버에 접속이 가능했다.
 
 <br>; **6.1.2 조치방법**
 
--
+- 취약점이 패치된 버전으로 업
