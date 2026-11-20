@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab20
 created: 2026-11-17
-modified: 2026-11-20T15:44:34.363Z
+modified: 2026-11-20T16:07:48.692Z
 published: 2026-11-17
 date: 2026-11-17
 tags:
@@ -202,7 +202,7 @@ hashcat -m 10900 mirth.hash ~/Desktop/rockyou.txt
 
 비밀번호 크랙킹에 성공했다. `snowflake1`
 
-![[00. Setting/00. 첨부파일/Pasted image 20261117144459.png]]
+![[00. Setting/00. 첨부파일/Pasted image 20261121010747.png]]
 
 `SSH`에 `sedric` 사용자 이름으로 접속했고, 성공했다.
 
