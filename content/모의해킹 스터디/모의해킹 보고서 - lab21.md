@@ -2,7 +2,7 @@
 publish: true
 title: 모의해킹 보고서 - lab21
 created: 2026-11-19
-modified: 2026-11-20T18:12:52.989Z
+modified: 2026-11-20T18:23:25.929Z
 published: 2026-11-19
 date: 2026-11-19
 tags:
@@ -381,13 +381,24 @@ Security requirements: High
 - `Support-bundles` 안에 기존 개인키를 삭제.
 - `Support-bundles` 폴더 접근 권한을 제한한다.
 
-### 6.3  root의 권한으로 인증 없이 실행 가능한 서비스
+### 6.4  root의 권한으로 인증 없이 실행 가능한 서비스
 
-<br> **6.3.1 설명**
+<br> **6.4.1 설명**
 
 - `sudo -l`의 내용을 보니 `/usr/local/sbin/helix-maint-console`이 있었다.
 - 조건을 맞춰 정비창을 열어 root의 권한으로 셸을 열 수 있었다.
 
-<br> **6.3.2 조치방법**
+<br> **6.4.2 조치방법**
+
+-
+
+### 6.4  root의 권한으로 인증 없이 실행 가능한 서비스
+
+<br> **6.4.1 설명**
+
+- `sudo -l`의 내용을 보니 `/usr/local/sbin/helix-maint-console`이 있었다.
+- 조건을 맞춰 정비창을 열어 root의 권한으로 셸을 열 수 있었다.
+
+<br> **6.4.2 조치방법**
 
 -
